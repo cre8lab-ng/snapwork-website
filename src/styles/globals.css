@@ -78,3 +78,22 @@
 body {
   font-family: "Satoshi", sans-serif;
 }
+
+.heroBackground {
+  min-height: 100vh;
+  background-color: #bfdbfe; 
+  background-image: url('/illustration-workers.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .heroBackground {
+    background-position: top;
+    background-size: contain;
+    min-height: 800px; /* ✅ Increase height for more image space */
+
+  }
+}
+
