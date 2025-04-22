@@ -73,6 +73,8 @@
 @theme {
   --color-blue-100: #1e3a8a;
   --color-blue-200: #f4f3ff;
+  --color-blue-300: #0B1532;
+
 }
 
 body {
@@ -81,7 +83,6 @@ body {
 
 .heroBackground {
   min-height: 100vh;
-  background-color: #bfdbfe; 
   background-image: url('/illustration-workers.svg');
   background-repeat: no-repeat;
   background-position: bottom;
@@ -91,8 +92,8 @@ body {
 @media (max-width: 767px) {
   .heroBackground {
     background-position: top;
-    background-size: contain;
-    min-height: 800px; /* ✅ Increase height for more image space */
+    /* background-size: contain; */
+    min-height: 800px; 
 
   }
 }
