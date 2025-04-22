@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 import WebPageTitle from "@/components/webpagetitle";
 import ServicesSection from "@/components/services-section";
 import Footer from "@/components/footer";
+import WhyUs from "@/components/why-us";
 
 export default function HeroSection() {
   const headings = [
@@ -42,8 +43,8 @@ export default function HeroSection() {
           </Button>
         </main>
       </div>
-
       <ServicesSection />
+      <WhyUs />
       <Footer />
     </>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Icon from "./icon";
 import Image from "next/image";
+import { Button } from "./ui/button";
 
 export default function Footer() {
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -25,9 +26,9 @@ export default function Footer() {
             placeholder="Email Address"
             className="bg-blue-300 w-full rounded-lg px-4 py-3 mb-4 text-white border border-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
           />
-          <button className="bg-white text-[#283B8B] font-semibold py-2 px-6 rounded-xl">
+          <Button variant="secondary">
             Subscribe
-          </button>
+          </Button>
         </div>
 
         <div className="mt-6 lg:mt-0">
