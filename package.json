@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "husky": "^9.1.7",
     "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

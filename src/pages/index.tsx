@@ -7,6 +7,7 @@ import WebPageTitle from "@/components/webpagetitle";
 import ServicesSection from "@/components/services-section";
 import Footer from "@/components/footer";
 import WhyUs from "@/components/why-us";
+import CityMap from "@/components/city-map";
 
 export default function HeroSection() {
   const headings = [
@@ -45,6 +46,7 @@ export default function HeroSection() {
       </div>
       <ServicesSection />
       <WhyUs />
+      <CityMap/>
       <Footer />
     </>
   );
