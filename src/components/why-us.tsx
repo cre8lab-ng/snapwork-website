@@ -40,7 +40,7 @@ export default function WhyUs() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [serviceProviders.length]);
 
   return (
     <>
@@ -64,7 +64,7 @@ export default function WhyUs() {
             </h3>
             <p className="text-blue-300 mb-6">
               We connect you with trusted professionals who show up on time and
-              get the job done right, whether it's plumbing, electrical work, or
+              get the job done right, whether it&apos;s plumbing, electrical work, or
               general home services.
             </p>
             <Button variant="primary">Book Now</Button>

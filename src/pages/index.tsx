@@ -23,7 +23,7 @@ export default function HeroSection() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [headings.length]);
 
   return (
     <>
