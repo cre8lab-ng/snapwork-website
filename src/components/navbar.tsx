@@ -33,11 +33,15 @@ export function Navbar() {
           Contact Us
         </Link>
       </nav>
-
-      <Button className="bg-darkblue text-blue-200 rounded-xl p-3 hidden md:block">
-        Book Now
-      </Button>
-
+      <a
+        href="https://book-snapwork.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button className="bg-darkblue text-blue-200 rounded-xl p-3 hidden md:block">
+          Book Now
+        </Button>
+      </a>
       <div className="md:hidden">
         <button
           className="flex flex-col gap-1 w-8 h-8 justify-center items-center"

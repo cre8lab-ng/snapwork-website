@@ -108,6 +108,11 @@ body {
   animation: marquee 20s linear infinite;
 }
 
+a {
+  @apply cursor-pointer;
+}
+
+
 
 @media (max-width: 767px) {
   .heroBackground {
