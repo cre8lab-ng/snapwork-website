@@ -12,7 +12,7 @@ export function Navbar() {
     <header className="w-full flex items-center justify-between p-2 lg:px-8 lg:py-6 relative z-50">
       <div className="flex items-center gap-2 bg-blue-200 p-2 rounded-xl">
         <Image
-          src="/snapwork-logo.svg"
+          src="images/snapwork-logo.svg"
           alt="Snapwork Logo"
           width={150}
           height={150}
@@ -20,21 +20,21 @@ export function Navbar() {
       </div>
 
       <nav className="space-x-6 hidden md:flex bg-blue-200 p-4 rounded-xl">
-        <Link href="#why-us" className="text-blue-100 font-bold">
+        <Link href="#why-us" className="text-darkblue font-bold">
           Why Us
         </Link>
-        <Link href="#services" className="text-blue-100 font-bold">
+        <Link href="#services" className="text-darkblue font-bold">
           Services
         </Link>
-        <Link href="#pricing" className="text-blue-100 font-bold">
+        <Link href="#pricing" className="text-darkblue font-bold">
           Pricing
         </Link>
-        <Link href="#contact" className="text-blue-100 font-bold">
+        <Link href="#contact" className="text-darkblue font-bold">
           Contact Us
         </Link>
       </nav>
 
-      <Button className="bg-blue-100 text-blue-200 rounded-xl p-3 hidden md:block">
+      <Button className="bg-darkblue text-blue-200 rounded-xl p-3 hidden md:block">
         Book Now
       </Button>
 
@@ -62,7 +62,7 @@ export function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="fixed inset-0 bg-blue-100 flex flex-col items-center justify-center space-y-6 z-40 md:hidden">
+        <div className="fixed inset-0 bg-darkblue flex flex-col items-center justify-center space-y-6 z-40 md:hidden">
           <button
             onClick={() => setMenuOpen(false)}
             className="absolute top-4 right-4 text-blue-200 text-3xl font-bold focus:outline-none"
@@ -101,7 +101,7 @@ export function Navbar() {
           </Link>
           <Button
             onClick={() => setMenuOpen(false)}
-            className="bg-blue-200 text-blue-100 text-lg p-4 rounded-xl"
+            className="bg-blue-200 text-darkblue text-lg p-4 rounded-xl"
           >
             Book Now
           </Button>

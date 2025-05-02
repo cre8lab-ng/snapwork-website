@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @font-face {
   font-family: "Satoshi Black";
   src: url("/fonts/Satoshi-Black.otf") format("opentype");
@@ -71,24 +72,42 @@
 }
 
 @theme {
-  --color-blue-100: #1e3a8a;
+  --color-darkblue: #1e3a8a;
   --color-blue-200: #f4f3ff;
   --color-blue-300: #0B1532;
   --color-blue-400:#AFD1FA;
+  --color-blue-500:#14275E;
+  --color-lightblue-100:#F4F3FF;
 
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
 body {
   font-family: "Satoshi", sans-serif;
+  background-color: #F4F3FF;
 }
 
 .heroBackground {
   min-height: 100vh;
-  background-image: url('/illustration-workers.svg');
+  background-image: url('/images/illustration-workers.svg');
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
 }
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
 
 @media (max-width: 767px) {
   .heroBackground {
@@ -98,4 +117,5 @@ body {
 
   }
 }
+
 

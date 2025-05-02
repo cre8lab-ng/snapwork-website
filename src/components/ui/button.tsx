@@ -11,9 +11,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const baseStyles = "rounded-xl font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors";
 
 const variants = {
-  default: "bg-blue-100 text-blue-200 rounded-xl p-3 hidden md:block",
-  primary: "border text-blue-100 rounded-xl p-3 hidden md:block",
-  secondary: "bg-white text-blue-100 font-semibold py-2 px-6 rounded-xl",
+  default: "bg-darkblue text-blue-200 rounded-xl p-3 hidden md:block",
+  primary: "border rounded-xl p-3 hidden md:block",
+  secondary: "bg-white text-darkblue font-semibold py-2 px-6 rounded-xl",
 };
 
 const sizes = {

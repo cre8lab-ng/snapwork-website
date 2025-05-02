@@ -6,27 +6,27 @@ export default function WhyUs() {
   const serviceProviders = [
     {
       name: "Tailor",
-      image: "/tailor.svg",
+      image: "images/tailor.svg",
       alt: "A tailor cutting fabric with scissors",
     },
     {
       name: "Electrician",
-      image: "/electrician.svg",
+      image: "images/electrician.svg",
       alt: "An electrician working with wires and tools",
     },
     {
       name: "Painter",
-      image: "/painter.svg",
+      image: "images/painter.svg",
       alt: "A painter applying paint to a wall with a roller",
     },
     {
       name: "Bricklayer",
-      image: "/bricklayer.svg",
+      image: "images/bricklayer.svg",
       alt: "A bricklayer laying bricks to build a wall",
     },
     {
       name: "Cleaner",
-      image: "/cleaner.svg",
+      image: "images/cleaner.svg",
       alt: "A cleaner tidying up a room with cleaning supplies",
     },
   ];
@@ -52,7 +52,7 @@ export default function WhyUs() {
           <div className="bg-white p-6 rounded-xl">
             <div className="w-full h-48 mb-6">
               <Image
-                src="/sample-1.svg"
+                src="/images/sample-1.svg"
                 alt="Reliable Expert"
                 width={500}
                 height={192}
@@ -64,16 +64,16 @@ export default function WhyUs() {
             </h3>
             <p className="text-blue-300 mb-6">
               We connect you with trusted professionals who show up on time and
-              get the job done right, whether it&apos;s plumbing, electrical work, or
-              general home services.
+              get the job done right, whether it&apos;s plumbing, electrical
+              work, or general home services.
             </p>
             <Button variant="primary">Book Now</Button>
           </div>
 
-          <div className="p-6 rounded-xl">
+          <div className="bg-white p-6 rounded-xl">
             <div className="w-full h-48 mb-6">
               <Image
-                src="/sample-2.svg"
+                src="/images/sample-2.svg"
                 alt="Hassle-Free Booking"
                 width={500}
                 height={192}
@@ -91,10 +91,10 @@ export default function WhyUs() {
             <Button variant="primary">Book Now</Button>
           </div>
 
-          <div className="p-6 rounded-xl">
+          <div className="bg-white p-6 rounded-xl">
             <div className="w-full h-48 mb-6">
               <Image
-                src="/sample-3.svg"
+                src="/images/sample-3.svg"
                 alt="Transparent Pricing"
                 width={500}
                 height={192}
@@ -123,8 +123,7 @@ export default function WhyUs() {
             Easily get matched with trusted professionals
             <br />
             whether you need
-            <span className="text-blue-100 font-semibold">
-              {" "}
+            <span className="text-darkblue font-semibold">
               {currentProvider.name}
             </span>
             <br />
@@ -133,14 +132,15 @@ export default function WhyUs() {
           <Button>Book now</Button>
         </div>
         <div className="flex-1">
-          <Image
-            src={currentProvider.image}
-            alt={currentProvider.alt}
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full h-auto rounded-lg"
-          />
+          <div className="w-full h-120 flex items-center justify-center">
+            <Image
+              src={currentProvider.image}
+              alt={currentProvider.alt}
+              width={500}
+              height={400}
+              className="object-contain max-h-full rounded-lg"
+            />
+          </div>
         </div>
       </section>
     </>

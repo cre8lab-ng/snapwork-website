@@ -4,7 +4,7 @@ export default function Home() {
   const features = ["Now in 7 locations", "Loved by 100+", "Growing daily"];
 
   return (
-    <div className="flex flex-col items-center justify-center py-10 px-4 bg-[#f3f3fb] min-h-screen">
+    <div className="flex flex-col items-center justify-center py-10 px-4  min-h-screen">
       <h1 className="text-2xl font-bold mb-6 text-center">
         Snapwork in Your City?
       </h1>
@@ -12,7 +12,7 @@ export default function Home() {
       <div className="w-full">
         <div className="rounded-xl overflow-hidden">
           <Image
-            src="city-map.svg"
+            src="/images/city-map.svg"
             alt="Snapwork Locations Map"
             width={1600}
             height={800}
@@ -28,7 +28,7 @@ export default function Home() {
             >
               <span className="text-blue-300 font-bold text-xl">{feature}</span>
               <Image
-                src="/check.svg"
+                src="/images/check.svg"
                 alt="Feature Check"
                 width={30}
                 height={30}
