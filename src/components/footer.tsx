@@ -39,7 +39,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 md:mb-2">COMPANY</h3>
             <div className="md:hidden">
               <Image
-                src="/dropdown.svg"
+                src="/images/dropdown.svg"
                 alt="Dropdown"
                 width={20}
                 height={20}
@@ -66,7 +66,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 md:mb-2">QUICK LINKS</h3>
             <div className="md:hidden">
               <Image
-                src="/dropdown.svg"
+                src="/images/dropdown.svg"
                 alt="Dropdown"
                 width={20}
                 height={20}
@@ -93,7 +93,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 md:mb-2">CONTACT</h3>
             <div className="md:hidden">
               <Image
-                src="/dropdown.svg"
+                src="/images/dropdown.svg"
                 alt="Dropdown"
                 width={20}
                 height={20}

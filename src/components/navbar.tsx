@@ -19,6 +19,7 @@ export function Navbar() {
         />
       </div>
 
+      {/* Desktop Nav */}
       <nav className="space-x-6 hidden md:flex bg-blue-200 p-4 rounded-xl">
         <Link href="#why-us" className="text-darkblue font-bold">
           Why Us
@@ -33,17 +34,24 @@ export function Navbar() {
           Contact Us
         </Link>
       </nav>
+
+      {/* Desktop Book Now Button */}
       <a
         href="https://book-snapwork.netlify.app/"
         target="_blank"
         rel="noopener noreferrer"
+        className="hidden md:block"
       >
-        <Button className="bg-darkblue text-blue-200 rounded-xl p-3 hidden md:block">
+        <Button className="bg-darkblue text-blue-200 rounded-xl p-3">
           Book Now
         </Button>
       </a>
+
+      {/* Mobile Menu Toggle */}
       <div className="md:hidden">
         <button
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
           className="flex flex-col gap-1 w-8 h-8 justify-center items-center"
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -65,8 +73,9 @@ export function Navbar() {
         </button>
       </div>
 
+      {/* Mobile Drawer */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-darkblue flex flex-col items-center justify-center space-y-6 z-40 md:hidden">
+        <div className="fixed inset-0 bg-darkblue flex flex-col items-center justify-center space-y-6 z-40 md:hidden transition-opacity duration-300">
           <button
             onClick={() => setMenuOpen(false)}
             className="absolute top-4 right-4 text-blue-200 text-3xl font-bold focus:outline-none"
@@ -103,12 +112,16 @@ export function Navbar() {
           >
             Contact Us
           </Link>
-          <Button
+
+          <a
+            href="https://book-snapwork.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
-            className="bg-blue-200 text-darkblue text-lg p-4 rounded-xl"
+            className="bg-blue-200 text-darkblue text-lg p-4 rounded-xl font-semibold"
           >
             Book Now
-          </Button>
+          </a>
         </div>
       )}
     </header>
