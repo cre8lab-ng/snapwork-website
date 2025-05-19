@@ -22,7 +22,14 @@ export default function HeroSection() {
           </p>
 
           <div className="flex justify-center mt-6">
-            <Button variant="primary">Book Now</Button>
+            <a
+              href="https://book-snapwork.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:block"
+            >
+              <Button variant="primary">Book Now</Button>
+            </a>
           </div>
         </div>
       </main>
