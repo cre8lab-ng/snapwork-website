@@ -1,11 +1,7 @@
+import React from "react";
 import Icon from "./icon";
 
-interface Service {
-  title: string;
-  icon: string;
-}
-
-const services: Service[] = [
+const services = [
   { title: "Inverter Repair & install", icon: "inverter-repair" },
   { title: "Plumbing", icon: "plumbing" },
   { title: "Generator Repair & install", icon: "generator-repair" },
@@ -16,29 +12,36 @@ const services: Service[] = [
   { title: "Hair Services", icon: "hair-services" },
   { title: "Fashion Designer", icon: "fashion-designer" },
   { title: "Electrical Services", icon: "electrical-services" },
+  { title: "Fashion Designer", icon: "fashion-designer" },
+  { title: "Electrical Services", icon: "electrical-services" },
 ];
 
-export default function ServicesSection() {
+export default function ServicesPage() {
   return (
-    <section className=" py-16">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold ">Our Services</h2>
-        <div className="w-6 h-1  mx-auto mt-2 rounded-full"></div>
+    <div className="min-h-screen text-white py-16 px-4">
+      <h2 className="text-6xl font-bold text-center">Our Services</h2>
+      <div className="flex justify-center mb-10">
+      <Icon name="underline" color="stroke-orange-100" />
+
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-y-12 gap-x-8 max-w-6xl mx-auto px-4">
-        {services.map((service, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 px-4 max-w-6xl mx-auto">
+      {services.map((service, index) => (
           <div
-            key={index}
-            className="flex flex-col items-center text-center space-y-3"
-          >
+          key={index}
+          className="bg-[#2A3D8F] rounded-xl px-6 py-6 flex items-center justify-between shadow-md w-full"
+        >
+          <div className="basis-[40%] flex justify-center">
             <Icon name={service.icon} />
-            <p className="text-sm font-medium text-gray-800 leading-tight">
-              {service.title}
-            </p>
           </div>
+        
+          <p className="basis-[40%] font-semibold text-lg leading-tight text-center">
+            {service.title}
+          </p>
+        </div>
+        
         ))}
       </div>
-    </section>
+    </div>
   );
 }

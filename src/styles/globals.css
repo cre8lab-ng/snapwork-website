@@ -72,54 +72,61 @@
 }
 
 @theme {
-  --color-darkblue: #1e3a8a;
+  --color-darkblue: #1E3A8A;
   --color-blue-200: #f4f3ff;
   --color-blue-300: #0B1532;
   --color-blue-400:#AFD1FA;
   --color-blue-500:#14275E;
   --color-lightblue-100:#F4F3FF;
-
+  --color-lightblue-200:#D5E7FC;
+  --color-orange-100:#FEBC23;
+  --color-orange-200:#F6E8D3;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
+
+@layer utilities {
+  .animate-draw {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 1s ease-in-out forwards;
   }
-  100% {
-    transform: translateX(-100%);
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 }
 
 
 body {
   font-family: "Satoshi", sans-serif;
-  background-color: #F4F3FF;
+  background-color: darkblue;
 }
 
 .heroBackground {
-  min-height: 100vh;
-  background-image: url('/images/illustration-workers.svg');
+  background-image: url('/images/illustration-workers-curved.svg');
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: cover;
+  min-height: 100vh;
 }
 
-.animate-marquee {
-  animation: marquee 20s linear infinite;
-}
 
 a {
   @apply cursor-pointer;
 }
 
-
+.animate-draw {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw 1s ease-in-out forwards;
+}
 
 @media (max-width: 767px) {
   .heroBackground {
     background-position: top;
-    /* background-size: contain; */
     min-height: 500px; 
-
   }
 }
 

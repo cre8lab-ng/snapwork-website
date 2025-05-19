@@ -35,10 +35,8 @@ const FaqView = () => {
 
   return (
     <>
-      {/* Desktop View */}
-      <div className="hidden md:flex p-6 md:p-12 bg-lightblue-100">
-        <div className="rounded-2xl w-full flex shadow-xl gap-6">
-          {/* Questions */}
+      <div className="hidden md:flex p-6 md:p-12 ">
+        <div className="rounded-2xl w-full flex shadow-xl gap-6 bg-white">
           <div className="w-1/2 p-6 md:p-10 space-y-6">
             <h2 className="text-3xl md:text-4xl font-extrabold text-darkblue mb-4">FAQs</h2>
             <div className="space-y-4">

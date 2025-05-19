@@ -12,7 +12,7 @@ const baseStyles = "rounded-xl font-semibold focus:outline-none focus:ring-2 foc
 
 const variants = {
   default: "bg-darkblue text-blue-200 rounded-xl p-3 hidden md:block",
-  primary: "border rounded-xl p-3 hidden md:block",
+  primary: "border rounded-xl p-3 hidden md:block text-darkblue",
   secondary: "bg-white text-darkblue font-semibold py-2 px-6 rounded-xl",
 };
 

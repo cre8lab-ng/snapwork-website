@@ -30,17 +30,17 @@ export default function ServiceProfessional() {
   const current = professionals[index];
 
   return (
-    <div className="bg-blue-500   text-white p-20">
+    <div className="text-white p-20">
       <div className="flex justify-between">
         <div className="text-2xl md:text-3xl font-bold mb-6">
           Are You a Service Professional?
         </div>
         <Button className="border-white " variant="primary">
-          Join Us{" "}
+          Join Us
         </Button>
       </div>
 
-      <div className="flex flex-col md:flex-row bg-blue-500 rounded-3xl w-full mt-6">
+      <div className="flex flex-col md:flex-row rounded-3xl w-full mt-6">
         <div className="bg-white rounded-2xl flex items-center justify-center">
           <Image
             src={current.image}

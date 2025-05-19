@@ -1,148 +1,72 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { useEffect, useState } from "react";
+import Icon from "./icon";
+
+const reasons = [
+  {
+    title: "Reliable Experts",
+    description:
+      "From plumbing to electrical repairs, our verified experts get the job done right the first time.",
+    image: "/images/reliable-expert.svg",
+    alt: "Reliable Experts Image",
+    bgColor: "bg-lightblue-200",
+  },
+  {
+    title: "Hassle-Free Booking",
+    description:
+      "Booking a service is easy—skip the long calls. Just a few clicks to find help and fix things fast.",
+    image: "/images/hasslefree-booking.svg",
+    alt: "Booking App Image",
+    bgColor: "bg-yellow-100",
+  },
+  {
+    title: "Hassle-Free Booking",
+    description:
+      "Booking a service is easy—skip the long calls. Just a few clicks to find help and fix things fast.",
+    image: "/images/transparent-pricing.svg",
+    alt: "Guy Booking Image",
+    bgColor: "bg-lightblue-200",
+  },
+  {
+    title: "Transparent Pricing",
+    description:
+      "We show prices upfront—no hidden fees. Just clear, honest pricing so you know what to expect before work begins.",
+    image: "/images/transparent-pricing2.svg",
+    alt: "Pricing Chart Image",
+    bgColor: "bg-amber-100",
+  },
+];
 
 export default function WhyUs() {
-  const serviceProviders = [
-    {
-      name: "Tailor",
-      image: "images/tailor.svg",
-      alt: "A tailor cutting fabric with scissors",
-    },
-    {
-      name: "Electrician",
-      image: "images/electrician.svg",
-      alt: "An electrician working with wires and tools",
-    },
-    {
-      name: "Painter",
-      image: "images/painter.svg",
-      alt: "A painter applying paint to a wall with a roller",
-    },
-    {
-      name: "Bricklayer",
-      image: "images/bricklayer.svg",
-      alt: "A bricklayer laying bricks to build a wall",
-    },
-    {
-      name: "Cleaner",
-      image: "images/cleaner.svg",
-      alt: "A cleaner tidying up a room with cleaning supplies",
-    },
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const currentProvider = serviceProviders[currentIndex];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % serviceProviders.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [serviceProviders.length]);
-
   return (
-    <>
-      <section className="py-16 px-6 md:px-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Why Us?
-        </h2>
-        <div className="grid md:grid-cols-3 gap-10">
-          <div className="bg-white p-6 rounded-xl">
-            <div className="w-full h-48 mb-6">
-              <Image
-                src="/images/sample-1.svg"
-                alt="Reliable Expert"
-                width={500}
-                height={192}
-                className="w-full h-full object-cover"
-              />
+    <section className="py-16 px-4">
+      <h2 className="text-6xl font-bold text-center text-white">Why Us?</h2>
+      <div className="flex justify-center mb-10">
+      <Icon name="underline" color="stroke-orange-100" />
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+        {reasons.map((reason, index) => (
+          <div
+            key={index}
+            className={`rounded-[16px] p-6 h-[340px] text-center transform transition duration-300 ${reason.bgColor}`}
+            style={{ rotate: index % 2 === 0 ? "-2deg" : "2deg" }}
+          >
+            <div className="w-full h-[120px] relative mb-4 mx-auto">
+              <div className="w-full mb-8">
+                <div className="w-full h-[180px] mb-6 relative">
+                  <Image
+                    src={reason.image}
+                    alt={reason.alt}
+                    fill
+                    className="object-contain w-full h-full"
+                  />
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl text-blue-300 font-bold mb-4">
-              Reliable Experts at Your Fingertips
-            </h3>
-            <p className="text-blue-300 mb-6">
-              We connect you with trusted professionals who show up on time and
-              get the job done right, whether it&apos;s plumbing, electrical
-              work, or general home services.
-            </p>
-            <Button variant="primary">Book Now</Button>
+            <h3 className="text-lg font-bold text-[#0D2B7C] mt-20">{reason.title}</h3>
+            <p className="text-sm text-gray-700 mt-2">{reason.description}</p>
           </div>
-
-          <div className="bg-white p-6 rounded-xl">
-            <div className="w-full h-48 mb-6">
-              <Image
-                src="/images/sample-2.svg"
-                alt="Hassle-Free Booking"
-                width={500}
-                height={192}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <h3 className="text-xl text-blue-300 font-bold mb-4">
-              Hassle-Free Booking at Your Fingertips
-            </h3>
-            <p className="text-blue-300 mb-6">
-              Booking a service is easy. No long calls or confusing steps, just
-              a few clicks to find the right expert and get things fixed without
-              stress or delays.
-            </p>
-            <Button variant="primary">Book Now</Button>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl">
-            <div className="w-full h-48 mb-6">
-              <Image
-                src="/images/sample-3.svg"
-                alt="Transparent Pricing"
-                width={500}
-                height={192}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <h3 className="text-xl text-blue-300 font-bold mb-4">
-              Transparent Pricing, No Surprises
-            </h3>
-            <p className="text-blue-300 mb-6">
-              We show you the price upfront. No hidden charges or extra fees,
-              just honest, clear pricing so you always know what to expect
-              before work even begins.
-            </p>
-            <Button variant="primary">Book Now</Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="flex flex-col md:flex-row justify-between items-center py-16 px-6 md:px-16 w-full gap-8">
-        <div className="flex-1">
-          <h2 className="text-4xl font-bold text-blue-300 mb-4">
-            Need Help With Something?
-          </h2>
-          <p className="text-blue-300 mb-4 text-xl">
-            Easily get matched with trusted professionals
-            <br />
-            whether you need
-            <span className="text-darkblue font-semibold">
-              {currentProvider.name}
-            </span>
-            <br />
-            for as low as 3k
-          </p>
-          <Button>Book now</Button>
-        </div>
-        <div className="flex-1">
-          <div className="w-full h-120 flex items-center justify-center">
-            <Image
-              src={currentProvider.image}
-              alt={currentProvider.alt}
-              width={500}
-              height={400}
-              className="object-contain max-h-full rounded-lg"
-            />
-          </div>
-        </div>
-      </section>
-    </>
+        ))}
+      </div>
+    </section>
   );
 }

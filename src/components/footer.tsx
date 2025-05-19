@@ -13,7 +13,7 @@ export default function Footer() {
   const isOpen = (section: string) => openSection === section;
 
   return (
-    <footer className="bg-darkblue text-white px-4 pt-20 pb-10">
+    <footer className=" text-white px-4 pt-20 pb-10">
       <div className="lg:flex justify-between">
         <div>
           <h2 className="text-xl font-bold mb-4 leading-snug">
