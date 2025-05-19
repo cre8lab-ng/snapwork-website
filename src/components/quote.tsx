@@ -1,25 +1,25 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import Icon from "./icon";
+// import Icon from "./icon";
 import Image from "next/image";
 
-const rotatingWords = [
-  { text: "Cleaners", color: "stroke-orange-300" },
-  { text: "Plumbers", color: "stroke-blue-400" },
-  { text: "Electricians", color: "stroke-green-500" },
-];
+// const rotatingWords = [
+//   { text: "Cleaners", color: "stroke-orange-300" },
+//   { text: "Plumbers", color: "stroke-blue-400" },
+//   { text: "Electricians", color: "stroke-green-500" },
+// ];
 
 export default function Quote() {
-  const [index, setIndex] = useState(0);
+  // const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((i) => (i + 1) % rotatingWords.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIndex((i) => (i + 1) % rotatingWords.length);
+  //   }, 2000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
-  const { text, color } = rotatingWords[index];
+  // const { text, color } = rotatingWords[index];
 
   return (
     <section
@@ -37,13 +37,13 @@ export default function Quote() {
             Does your business need <br />
             reliable partners like
           </p>
-
+{/* 
           <h2 className="text-7xl font-bold text-[#162B7D] transition-all duration-500">
             {text}
             <div className="mt-2">
               <Icon name="underline" color={color} key={text}/>
             </div>
-          </h2>
+          </h2> */}
 
           <p className="text-2xl text-darkblue">we’ve got you covered</p>
 
