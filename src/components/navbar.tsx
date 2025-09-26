@@ -55,7 +55,7 @@ export function Navbar() {
         </nav>
 
         {/* Desktop Book Now button */}
-        <Button className="hidden sm:block text-sm md:text-base px-4 md:px-6">
+        <Button className="hidden md:block text-sm md:text-base px-4 md:px-6">
           Book Now
         </Button>
 
