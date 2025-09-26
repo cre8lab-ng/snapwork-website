@@ -39,9 +39,9 @@ const reasons = [
 export default function WhyUs() {
   return (
     <section className="py-16 px-4">
-      <h2 className="text-6xl font-bold text-center text-white">Why Us?</h2>
+      <h2 className="text-6xl font-bold text-center">Why Us?</h2>
       <div className="flex justify-center mb-10">
-      <Icon name="underline" color="stroke-orange-100" />
+        <Icon name="underline" color="stroke-orange-100" />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
         {reasons.map((reason, index) => (
@@ -62,7 +62,9 @@ export default function WhyUs() {
                 </div>
               </div>
             </div>
-            <h3 className="text-lg font-bold text-[#0D2B7C] mt-20">{reason.title}</h3>
+            <h3 className="text-lg font-bold text-[#0D2B7C] mt-20">
+              {reason.title}
+            </h3>
             <p className="text-sm text-gray-700 mt-2">{reason.description}</p>
           </div>
         ))}
