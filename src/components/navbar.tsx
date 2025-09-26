@@ -22,7 +22,7 @@ export function Navbar() {
             alt="Snapwork Logo"
             width={80}
             height={60}
-            className="w-auto h-8 sm:h-10 md:h-12"
+            className="w-auto h-10 sm:h-12 md:h-14"
           />
         </div>
 
@@ -60,9 +60,9 @@ export function Navbar() {
         </Button>
 
         {/* Mobile hamburger menu button */}
-        <button
+        <Button
           onClick={toggleMobileMenu}
-          className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1.5"
+          className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1.5 !bg-transparent !p-0"
           aria-label="Toggle mobile menu"
         >
           <span
@@ -80,7 +80,7 @@ export function Navbar() {
               isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           ></span>
-        </button>
+        </Button>
 
         {/* Mobile menu overlay */}
         {isMobileMenuOpen && (

@@ -18,7 +18,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen text-white py-16 px-4">
+    <div className="min-h-screen py-16 px-4">
       <h2 className="text-6xl font-bold text-center">Our Services</h2>
       <div className="flex justify-center mb-10">
       <Icon name="underline" color="stroke-orange-100" />
