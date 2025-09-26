@@ -44,7 +44,7 @@ export default function WhyUs() {
           const animationClass = [
             "animate-float-bounce", // Card 0: Floating with bounce
             "animate-wiggle-rotate", // Card 1: Wiggle and rotate
-            "animate-pulse-scale", // Card 2: Pulsing scale
+            "animate-float-bounce", // Card 2: Changed from pulse-scale to float-bounce
             "animate-swing-pendulum", // Card 3: Pendulum swing
             "animate-wave-motion", // Card 4: Wave-like motion
             "animate-spiral-dance", // Card 5: Spiral dance
@@ -141,20 +141,20 @@ export default function WhyUs() {
           animation: wiggle-rotate 3s ease-in-out infinite;
         }
 
-        /* Card Animation 3: Pulse Scale */
-        @keyframes pulse-scale {
+        /* Card Animation 3: Gentle Float (replaced pulse-scale) */
+        @keyframes gentle-float {
           0%,
           100% {
-            transform: scale(1) rotate(-2deg);
+            transform: translateY(0px) rotate(-1deg);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
           }
           50% {
-            transform: scale(1.08) rotate(2deg);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) rotate(1deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
           }
         }
-        .animate-pulse-scale {
-          animation: pulse-scale 3.5s ease-in-out infinite;
+        .animate-gentle-float {
+          animation: gentle-float 4s ease-in-out infinite;
         }
 
         /* Card Animation 4: Pendulum Swing */
