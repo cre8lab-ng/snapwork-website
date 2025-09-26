@@ -8,18 +8,18 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg";
 }
 
-const baseStyles = "rounded-xl font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors";
+const baseStyles = "rounded-full font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors";
 
 const variants = {
-  default: "bg-darkblue text-blue-200 rounded-xl p-3 hidden md:block",
-  primary: "border rounded-xl p-3 hidden md:block text-darkblue",
-  secondary: "bg-white text-darkblue font-semibold py-2 px-6 rounded-xl",
+  default: "bg-darkblue text-blue-200 p-3 hidden md:block",
+  primary: "border p-3 hidden md:block text-darkblue",
+  secondary: "bg-white text-darkblue font-semibold py-2 px-6 ",
 };
 
 const sizes = {
   sm: "px-3 py-1.5 text-sm",
   md: "px-4 py-2 text-base",
-  lg: "px-12 py-2 text-lg rounded-full",
+  lg: "px-12 py-2 text-lg",
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(

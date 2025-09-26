@@ -11,7 +11,7 @@ export default function HeroSection() {
             alt="Hero Illustration Workers"
             width={800}
             height={600}
-            className="w-full rounded-lg h-[500px] sm:h-[600px] md:h-[700px] lg:h-auto object-cover"
+            className="w-full rounded-lg h-96 sm:h-screen md:h-screen lg:h-auto object-cover"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-20 lg:pt-26 text-center px-2 sm:px-4 text-white">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight drop-shadow-lg mb-4 sm:mb-6 md:mb-8">
