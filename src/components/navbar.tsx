@@ -116,7 +116,7 @@ export function Navbar() {
               </Link>
               <div className="pt-4 border-t border-darkblue/20">
                 <Button 
-                  className="w-full text-sm"
+                  className="w-full text-sm block"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Book Now
