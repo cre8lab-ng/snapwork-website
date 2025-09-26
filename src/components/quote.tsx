@@ -24,7 +24,7 @@ export default function Quote() {
   return (
     <section className="w-full min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 spiral-edges overflow-hidden">
       <div className="grid md:grid-cols-2 items-center max-w-full">
-        <div className="space-y-6 px-4 md:px-20 pt-40 lg:pt-12">
+        <div className="space-y-6 px-4 md:px-20 pt-20 md:pt-40 lg:pt-12">
           <p className="text-3xl font-medium text-darkblue">
             Dependable partners for every business need from{" "}
           </p>
@@ -41,7 +41,7 @@ export default function Quote() {
           <Button>Request a Quote.</Button>
         </div>
 
-        <div className="mt-32 md:mt-24 flex justify-end overflow-visible -mr-2 md:-mr-4">
+        <div className="mt-8 md:mt-24 flex justify-end overflow-visible -mr-2 md:-mr-4">
           <Image
             src="/images/hand-phone.svg"
             alt="Phone in hand"
