@@ -30,7 +30,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section className="px-4 mt-10 mb-30">
+    <section className="px-4 mb-28">
       <SectionHeader
         title="Why Us?"
         subtitle="Your go-to platform for trusted providers, fair prices, and services done right the first time."
@@ -53,14 +53,14 @@ export default function WhyUs() {
     return (
       <div
         key={index}
-        className={`rounded-[20px] p-6 h-[340px] text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer ${reason.bgColor} ${animationClass}`}
+        className={`rounded-[20px] p-2 h-[420px] text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer ${reason.bgColor} ${animationClass}`}
         style={{
           animationDelay: `${index * 300}ms`,
           animationDuration: `${3 + (index % 3)}s`,
         }}
       >
         {/* Animated image container */}
-        <div className="w-full h-[120px] relative mb-4 mx-auto">
+        <div className="w-full h-[140px] relative mb-6 mx-auto">
           <div className="w-full mb-8">
             <div className={`w-full h-[180px] mb-6 relative animate-image-${index % 4}`}>
               <Image
@@ -73,10 +73,10 @@ export default function WhyUs() {
           </div>
         </div>
         
-        <h3 className="text-lg font-bold text-[#0D2B7C] mt-20 animate-text-glow">
+        <h3 className="text-2xl font-bold text-darkblue mt-16 mb-4 animate-text-glow">
           {reason.title}
         </h3>
-        <p className="text-sm text-gray-700 mt-2 animate-text-fade">
+        <p className="text-base text-dark mt-3 leading-relaxed animate-text-fade">
           {reason.description}
         </p>
       </div>
