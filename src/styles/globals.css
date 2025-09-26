@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @font-face {
   font-family: "Satoshi Black";
   src: url("/fonts/Satoshi-Black.otf") format("opentype");
@@ -72,17 +71,17 @@
 }
 
 @theme {
-  --color-darkblue: #1E3A8A;
+  --color-darkblue: #1e3a8a;
   --color-blue-200: #f4f3ff;
-  --color-blue-300: #0B1532;
-  --color-blue-400:#AFD1FA;
-  --color-blue-500:#14275E;
-  --color-lightblue-100:#F4F3FF;
-  --color-lightblue-200:#D5E7FC;
-  --color-orange-100:#FEBC23;
-  --color-orange-200:#F6E8D3;
+  --color-blue-300: #0b1532;
+  --color-blue-400: #afd1fa;
+  --color-blue-500: #14275e;
+  --color-lightblue-100: #f4f3ff;
+  --color-lightblue-200: #d5e7fc;
+  --color-orange-100: #febc23;
+  --color-orange-200: #f6e8d3;
+  --color-gray-100: #f8f8f8;
 }
-
 
 @layer utilities {
   .animate-draw {
@@ -98,11 +97,9 @@
   }
 }
 
-
 body {
   font-family: "Satoshi", sans-serif;
 }
-
 
 a {
   @apply cursor-pointer;
@@ -115,7 +112,4 @@ a {
 }
 
 @media (max-width: 767px) {
-
 }
-
-

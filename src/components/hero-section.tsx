@@ -5,10 +5,10 @@ export default function HeroSection() {
   return (
     <div className="w-full">
       <main className="flex flex-col items-center text-center px-4 sm:px-6 md:px-10 pt-4 sm:pt-6">
-        <div className="relative w-full max-w-6xl">
+        <div className="relative w-full">
           <Image
             src="/images/hero-illustration-workers.svg"
-            alt="Snapwork Logo"
+            alt="Hero Illustration Workers"
             width={800}
             height={600}
             className="w-full rounded-lg h-[500px] sm:h-[600px] md:h-[700px] lg:h-auto object-cover"
