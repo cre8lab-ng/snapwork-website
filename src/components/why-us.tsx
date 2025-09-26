@@ -30,7 +30,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section className="px-4 mb-28">
+    <section className="pt-12 px-4">
       <SectionHeader
         title="Why Us?"
         subtitle="Your go-to platform for trusted providers, fair prices, and services done right the first time."
@@ -59,10 +59,10 @@ export default function WhyUs() {
           animationDuration: `${3 + (index % 3)}s`,
         }}
       >
-        {/* Animated image container */}
-        <div className="w-full h-[140px] relative mb-6 mx-auto">
+        {/* Image container */}
+        <div className="w-full h-[140px] relative mb-6 mx-auto mt-4">
           <div className="w-full mb-8">
-            <div className={`w-full h-[180px] mb-6 relative animate-image-${index % 4}`}>
+            <div className="w-full h-[180px] mb-6 relative">
               <Image
                 src={reason.image}
                 alt={reason.alt}
@@ -73,10 +73,10 @@ export default function WhyUs() {
           </div>
         </div>
         
-        <h3 className="text-2xl font-bold text-darkblue mt-16 mb-4 animate-text-glow">
+        <h3 className="text-2xl font-bold text-darkblue mt-16 mb-4">
           {reason.title}
         </h3>
-        <p className="text-base text-dark mt-3 leading-relaxed animate-text-fade">
+        <p className="text-base text-dark mt-3 leading-relaxed">
           {reason.description}
         </p>
       </div>
@@ -224,63 +224,6 @@ export default function WhyUs() {
   }
   .animate-spiral-dance {
     animation: spiral-dance 6s ease-in-out infinite;
-  }
-
-  /* Image Animations */
-  @keyframes image-0 {
-    0%, 100% { transform: rotateY(0deg) scale(1); }
-    50% { transform: rotateY(15deg) scale(1.1); }
-  }
-  .animate-image-0 {
-    animation: image-0 2s ease-in-out infinite;
-  }
-
-  @keyframes image-1 {
-    0%, 100% { transform: rotateX(0deg); }
-    50% { transform: rotateX(10deg); }
-  }
-  .animate-image-1 {
-    animation: image-1 2.5s ease-in-out infinite;
-  }
-
-  @keyframes image-2 {
-    0%, 100% { transform: rotate(0deg) scale(1); }
-    25% { transform: rotate(5deg) scale(1.05); }
-    75% { transform: rotate(-5deg) scale(1.05); }
-  }
-  .animate-image-2 {
-    animation: image-2 3s ease-in-out infinite;
-  }
-
-  @keyframes image-3 {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-5px) rotate(3deg); }
-  }
-  .animate-image-3 {
-    animation: image-3 2.2s ease-in-out infinite;
-  }
-
-  /* Text Animations */
-  @keyframes text-glow {
-    0%, 100% { 
-      color: #0D2B7C;
-      text-shadow: none;
-    }
-    50% { 
-      color: #1e40af;
-      text-shadow: 0 0 10px rgba(29, 64, 175, 0.3);
-    }
-  }
-  .animate-text-glow {
-    animation: text-glow 3s ease-in-out infinite;
-  }
-
-  @keyframes text-fade {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 1; }
-  }
-  .animate-text-fade {
-    animation: text-fade 4s ease-in-out infinite;
   }
 
   /* Hover effects enhancement */
