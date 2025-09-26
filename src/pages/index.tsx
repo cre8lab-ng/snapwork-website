@@ -7,6 +7,7 @@ import HeroSection from "@/components/hero-section";
 import { Navbar } from "@/components/navbar";
 import GetAQuote from "@/components/get-a-quote";
 import JoinUs from "@/components/join-us";
+import HowToBook from "@/components/how-to-book";
 
 export default function LandingPage() {
   return (
@@ -16,7 +17,9 @@ export default function LandingPage() {
       <HeroSection />
       <ServicesSection />
       <WhyUs />
-      <GetAQuote/>
+      <HowToBook />
+      <GetAQuote />
+
       {/* <CityMap /> */}
       <JoinUs />
       <Faq />
