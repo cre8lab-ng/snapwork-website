@@ -101,15 +101,6 @@
 
 body {
   font-family: "Satoshi", sans-serif;
-  background-color: darkblue;
-}
-
-.heroBackground {
-  background-image: url('/images/illustration-workers-curved.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  min-height: 100vh;
 }
 
 
@@ -124,10 +115,7 @@ a {
 }
 
 @media (max-width: 767px) {
-  .heroBackground {
-    background-position: top;
-    min-height: 500px; 
-  }
+
 }
 
 
