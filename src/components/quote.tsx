@@ -41,13 +41,13 @@ export default function Quote() {
           <Button>Request a Quote.</Button>
         </div>
 
-        <div className="mt-12 md:mt-0 flex justify-end overflow-hidden">
+        <div className="mt-32 md:mt-24 flex justify-end overflow-visible -mr-2 md:-mr-4">
           <Image
             src="/images/hand-phone.svg"
             alt="Phone in hand"
-            width={400}
-            height={400}
-            className="h-auto w-full max-w-[300px] md:max-w-[400px] animate-float rotate-10"
+            width={500}
+            height={500}
+            className="h-auto w-full max-w-[400px] md:max-w-[500px] animate-float rotate-10 ml-16 md:ml-24 translate-x-4 md:translate-x-8"
           />
         </div>
       </div>
