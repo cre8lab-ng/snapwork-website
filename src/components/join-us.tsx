@@ -4,20 +4,21 @@ import { Button } from "./ui/button";
 
 const professionals = [
   {
-    name: "Wisdoma Crane",
-    image: "/images/tailor.svg",
-    bio: `I grew up in the vibrant city of Ibadan, where life is always buzzing with energy. For the last 3 years, I've been perfecting my craft as a woodworker, and it’s become my passion. From hand-carving furniture to creating intricate designs, I put heart and soul into every piece I make.`,
+    name: "Lola Oluwo",
+    image: "/images/lola-oluwo.svg",
+    bio: `I grew up in the vibrant city of Ibadan, where life is always buzzing with energy. For the last 3 years, I've been perfecting my craft as a woodworker, and it's become my passion. From hand-carving furniture to creating intricate designs, I put heart and soul into every piece I make.`,
   },
-  {
-    name: "Chika Obasi",
-    image: "/images/painter.svg",
-    bio: `Born and raised in Enugu, I found my calling as a seamstress. For over 5 years, I've tailored clothes that tell stories. Whether it's traditional attire or modern fashion, every stitch is filled with care.`,
-  },
-  {
-    name: "Chika Obasi",
-    image: "/images/electrician.svg",
-    bio: `Born and raised in Enugu, I found my calling as a seamstress. For over 5 years, I've tailored clothes that tell stories. Whether it's traditional attire or modern fashion, every stitch is filled with care.`,
-  },
+ {
+  name: "Chika Obasi",
+  image: "/images/lola-oluwo.svg",
+  bio: `In the busy streets of Enugu, I learned early that every engine has a story. Over the last 5 years, I’ve built my reputation as a mechanic who doesn’t just fix cars—I restore confidence on the road. From routine servicing to complex repairs, I take pride in turning problems into smooth rides.`,
+},
+{
+  name: "Bimbo Ola",
+  image: "/images/lola-oluwo.svg",
+  bio: `Lagos Island’s energy has always inspired me to create beauty out of everyday life. For 3 years, I’ve worked as a hairdresser who believes every style is a form of self-expression. Whether it’s a fresh cut, a bold color, or a timeless look, I craft hairstyles that empower people to feel their best.`,
+},
+
 ];
 
 export default function JoinUs() {
@@ -30,46 +31,47 @@ export default function JoinUs() {
   const current = professionals[index];
 
   return (
-    <div className="text-white p-20">
-      <div className="flex justify-between">
-        <div className="text-2xl md:text-3xl font-bold mb-6">
+    <div className="bg-[#1E2A63] text-white px-8 py-16 md:px-20 md:py-20">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+        <div className="text-3xl md:text-4xl font-bold mb-6 md:mb-0">
           Are You a Service Professional?
         </div>
-        <Button className="border-white " variant="primary">
-          Join Us
+        <Button className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#1E2A63] px-6 py-3 rounded-lg font-medium transition-colors" variant="primary">
+          Join Us!
         </Button>
       </div>
 
-      <div className="flex flex-col md:flex-row rounded-3xl w-full mt-6">
-        <div className="bg-white rounded-2xl flex items-center justify-center">
-          <Image
-            src={current.image}
-            alt={current.name}
-            width={300}
-            height={1000}
-            className="rounded-lg"
-            style={{ objectFit: "cover" }}
-          />
+      <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+        <div className="w-full md:w-1/2 max-w-md">
+          <div className="rounded-3xl flex items-center aspect-square">
+            <Image
+              src={current.image}
+              alt={current.name}
+              width={350}
+              height={350}
+              className="rounded-2xl"
+            />
+          </div>
         </div>
-        <div className="md:w-1/2 md:pl-10 mt-6 md:mt-0 text-white">
-          <h2 className="text-xl md:text-2xl font-medium mb-2">
+        <div className="w-full md:w-1/2 text-white">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
             {current.name}
           </h2>
-          <div className="border-b border-white w-32 mb-4"></div>
-          <p className="text-sm md:text-base text-gray-200 leading-relaxed">
+          <div className="border-b border-white w-full max-w-md mb-6"></div>
+          <p className="text-base md:text-lg text-gray-100 leading-relaxed mb-8 max-w-lg">
             {current.bio}
           </p>
-          <div className="flex items-center space-x-4 mt-6">
+          <div className="flex items-center gap-4">
             <button
               onClick={handlePrev}
-              className="border px-4 py-2 rounded-lg hover:bg-white hover:text-[#1E2A63]"
+              className="border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-[#1E2A63] transition-colors font-medium"
             >
               {"<"}
             </button>
-            <span>{`0${index + 1}`}</span>
+            <span className="text-lg font-medium">{`0${index + 1}`}</span>
             <button
               onClick={handleNext}
-              className="border px-4 py-2 rounded-lg hover:bg-white hover:text-[#1E2A63]"
+              className="border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-[#1E2A63] transition-colors font-medium"
             >
               {">"}
             </button>

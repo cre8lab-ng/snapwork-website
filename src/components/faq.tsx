@@ -13,7 +13,7 @@ const faqData = [
       "Yes, we offer same-day bookings based on the availability of service providers in your area.",
   },
   {
-    question: "What areas can I find Snapwork?",
+    question: "What areas can i find Snapwork?",
     answer:
       "Snapwork is currently available in select cities. You can check availability through our app or website.",
   },
@@ -25,17 +25,17 @@ const faqData = [
   {
     question: "Is Snapwork free to use?",
     answer:
-      "Yes, Snapwork is free for users. Service fees may apply when hiring or offering services.",
+      "Yes!\nSnapwork is completely free to use. You only pay for the service fee charged by the provider.",
   },
 ];
 
 const FaqView = () => {
-  const [selectedFaq, setSelectedFaq] = useState(faqData[0].question);
+  const [selectedFaq, setSelectedFaq] = useState(faqData[4].question); // Start with "Is Snapwork free to use?"
   const selected = faqData.find((faq) => faq.question === selectedFaq);
 
   return (
     <>
-      <div className="hidden md:flex p-6 md:p-12 ">
+      <div className="hidden md:flex p-6 md:p-12 bg-white">
         <div className="rounded-2xl w-full flex shadow-xl gap-6 bg-white">
           <div className="w-1/2 p-6 md:p-10 space-y-6">
             <h2 className="text-3xl md:text-4xl font-extrabold text-darkblue mb-4">FAQs</h2>
@@ -43,8 +43,10 @@ const FaqView = () => {
               {faqData.map((faq) => (
                 <button
                   key={faq.question}
-                  className={`w-full text-left border border-darkblue px-4 py-3 md:px-6 md:py-4 rounded-lg text-base md:text-lg font-bold transition text-darkblue ${
-                    selectedFaq === faq.question ? "bg-lightblue-200" : ""
+                  className={`w-full text-left border-2 px-4 py-3 md:px-6 md:py-4 rounded-lg text-base md:text-lg font-bold transition text-darkblue ${
+                    selectedFaq === faq.question 
+                      ? "bg-darkblue text-white border-darkblue" 
+                      : "bg-white border-gray-300 hover:border-darkblue"
                   }`}
                   onClick={() => setSelectedFaq(faq.question)}
                 >
@@ -62,8 +64,8 @@ const FaqView = () => {
           {/* Answers */}
           <div className="w-1/2 p-6 md:p-10 flex flex-col justify-start">
             <h2 className="text-3xl md:text-4xl font-extrabold text-darkblue mb-4">Answers</h2>
-            <div className="rounded bg-darkblue text-base md:text-lg opacity-90 leading-relaxed text-white h-[300px] md:h-[400px] overflow-auto p-4 md:p-6">
-              <p>{selected ? selected.answer : ""}</p>
+            <div className="rounded-lg bg-darkblue text-base md:text-lg leading-relaxed text-white h-[300px] md:h-[400px] overflow-auto p-4 md:p-6">
+              <p className="whitespace-pre-line">{selected ? selected.answer : ""}</p>
             </div>
           </div>
         </div>
@@ -74,7 +76,7 @@ const FaqView = () => {
         {/* Answer Section */}
         <div className="space-y-4">
           <h2 className="text-3xl font-extrabold">FAQs</h2>
-          <p className="text-base leading-relaxed">
+          <p className="text-base leading-relaxed whitespace-pre-line">
             {selected ? selected.answer : ""}
           </p>
         </div>
@@ -86,10 +88,10 @@ const FaqView = () => {
               <button
                 key={faq.question}
                 onClick={() => setSelectedFaq(faq.question)}
-                className={`min-w-[200px] whitespace-nowrap px-4 py-3 rounded-xl shadow-md text-sm font-semibold border border-darkblue ${
+                className={`min-w-[200px] whitespace-nowrap px-4 py-3 rounded-xl shadow-md text-sm font-semibold border-2 ${
                   selectedFaq === faq.question
-                    ? "bg-lightblue-200"
-                    : "bg-white text-darkblue"
+                    ? "bg-darkblue text-white border-darkblue"
+                    : "bg-white text-darkblue border-gray-300"
                 }`}
               >
                 {faq.question}
