@@ -95,6 +95,48 @@
       stroke-dashoffset: 0;
     }
   }
+
+  .animate-float {
+    animation: float 1.5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .spiral-edges {
+    clip-path: polygon(
+      0% 10%, 
+      5% 0%, 
+      15% 5%, 
+      25% 0%, 
+      35% 8%, 
+      45% 2%, 
+      55% 12%, 
+      65% 4%, 
+      75% 15%, 
+      85% 6%, 
+      95% 18%, 
+      100% 8%, 
+      100% 85%, 
+      95% 100%, 
+      85% 92%, 
+      75% 100%, 
+      65% 88%, 
+      55% 98%, 
+      45% 85%, 
+      35% 95%, 
+      25% 82%, 
+      15% 92%, 
+      5% 78%, 
+      0% 88%
+    );
+  }
 }
 
 body {

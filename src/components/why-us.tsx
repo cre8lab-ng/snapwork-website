@@ -30,208 +30,208 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section className="pt-8 sm:pt-12 px-4 mb-16 sm:mb-20">
+    <section className="pt-8 px-4 mb-16 sm:mb-20">
       <SectionHeader
         title="Why Us?"
         subtitle="Your go-to platform for trusted providers, fair prices, and services done right the first time."
         animated={true}
         showUnderline={true}
       />
- 
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto justify-items-center">
-  {reasons.map((reason, index) => {
-    // Different animation patterns for each card
-    const animationClass = [
-      'animate-float-bounce',      // Card 0: Floating with bounce
-      'animate-wiggle-rotate',     // Card 1: Wiggle and rotate
-      'animate-pulse-scale',       // Card 2: Pulsing scale
-      'animate-swing-pendulum',    // Card 3: Pendulum swing
-      'animate-wave-motion',       // Card 4: Wave-like motion
-      'animate-spiral-dance'       // Card 5: Spiral dance
-    ][index % 6];
 
-    return (
-      <div
-        key={index}
-        className={`rounded-[20px] p-3 sm:p-4 h-[380px] sm:h-[420px] md:h-[450px] text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer ${reason.bgColor} ${animationClass}`}
-        style={{
-          animationDelay: `${index * 300}ms`,
-          animationDuration: `${3 + (index % 3)}s`,
-        }}
-      >
-        {/* Image container */}
-        <div className="w-full h-[120px] sm:h-[140px] md:h-[160px] relative mb-4 sm:mb-6 mx-auto mt-2 sm:mt-4">
-          <div className="w-full mb-4 sm:mb-8">
-            <div className="w-full h-[140px] sm:h-[160px] md:h-[180px] mb-4 sm:mb-6 relative">
-              <Image
-                src={reason.image}
-                alt={reason.alt}
-                fill
-                className="object-contain w-full h-full filter drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
-              />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto justify-items-center">
+        {reasons.map((reason, index) => {
+          // Different animation patterns for each card
+          const animationClass = [
+            "animate-float-bounce", // Card 0: Floating with bounce
+            "animate-wiggle-rotate", // Card 1: Wiggle and rotate
+            "animate-pulse-scale", // Card 2: Pulsing scale
+            "animate-swing-pendulum", // Card 3: Pendulum swing
+            "animate-wave-motion", // Card 4: Wave-like motion
+            "animate-spiral-dance", // Card 5: Spiral dance
+          ][index % 6];
+
+          return (
+            <div
+              key={index}
+              className={`rounded-[20px] p-3 sm:p-4 h-[380px] sm:h-[420px] md:h-[450px] text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer ${reason.bgColor} ${animationClass}`}
+              style={{
+                animationDelay: `${index * 300}ms`,
+                animationDuration: `${3 + (index % 3)}s`,
+              }}
+            >
+              {/* Image container */}
+              <div className="w-full h-[140px] sm:h-[160px] md:h-[180px] relative mb-4 sm:mb-6 mx-auto mt-2 sm:mt-4">
+                <Image
+                  src={reason.image}
+                  alt={reason.alt}
+                  fill
+                  className="object-contain w-full h-full filter drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
+                />
+              </div>
+
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-darkblue mt-8 sm:mt-12 md:mt-16 mb-2 sm:mb-3 md:mb-4 px-2">
+                {reason.title}
+              </h3>
+              <p className="text-sm sm:text-base text-dark mt-2 sm:mt-3 leading-relaxed px-2 sm:px-3">
+                {reason.description}
+              </p>
             </div>
-          </div>
-        </div>
-        
-        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-darkblue mt-8 sm:mt-12 md:mt-16 mb-2 sm:mb-3 md:mb-4 px-2">
-          {reason.title}
-        </h3>
-        <p className="text-sm sm:text-base text-dark mt-2 sm:mt-3 leading-relaxed px-2 sm:px-3">
-          {reason.description}
-        </p>
+          );
+        })}
       </div>
-    );
-  })}
-</div>
-      
-    <style jsx>{`
-  /* Card Animation 1: Float and Bounce */
-  @keyframes float-bounce {
-    0%, 100% { 
-      transform: translateY(0px) rotate(-2deg) scale(1);
-    }
-    25% { 
-      transform: translateY(-8px) rotate(-3deg) scale(1.02);
-    }
-    50% { 
-      transform: translateY(-15px) rotate(-1deg) scale(1.05);
-    }
-    75% { 
-      transform: translateY(-8px) rotate(-3deg) scale(1.02);
-    }
-  }
-  .animate-float-bounce {
-    animation: float-bounce 4s ease-in-out infinite;
-  }
 
-  /* Card Animation 2: Wiggle and Rotate */
-  @keyframes wiggle-rotate {
-    0% { 
-      transform: rotate(2deg) translateX(0px);
-    }
-    10% { 
-      transform: rotate(4deg) translateX(2px);
-    }
-    20% { 
-      transform: rotate(1deg) translateX(-1px);
-    }
-    30% { 
-      transform: rotate(5deg) translateX(3px);
-    }
-    40% { 
-      transform: rotate(0deg) translateX(-2px);
-    }
-    50% { 
-      transform: rotate(3deg) translateX(1px);
-    }
-    60% { 
-      transform: rotate(-1deg) translateX(-3px);
-    }
-    70% { 
-      transform: rotate(4deg) translateX(2px);
-    }
-    80% { 
-      transform: rotate(1deg) translateX(-1px);
-    }
-    90% { 
-      transform: rotate(2deg) translateX(1px);
-    }
-    100% { 
-      transform: rotate(2deg) translateX(0px);
-    }
-  }
-  .animate-wiggle-rotate {
-    animation: wiggle-rotate 3s ease-in-out infinite;
-  }
+      <style jsx>{`
+        /* Card Animation 1: Float and Bounce */
+        @keyframes float-bounce {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(-2deg) scale(1);
+          }
+          25% {
+            transform: translateY(-8px) rotate(-3deg) scale(1.02);
+          }
+          50% {
+            transform: translateY(-15px) rotate(-1deg) scale(1.05);
+          }
+          75% {
+            transform: translateY(-8px) rotate(-3deg) scale(1.02);
+          }
+        }
+        .animate-float-bounce {
+          animation: float-bounce 4s ease-in-out infinite;
+        }
 
-  /* Card Animation 3: Pulse Scale */
-  @keyframes pulse-scale {
-    0%, 100% { 
-      transform: scale(1) rotate(-2deg);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    50% { 
-      transform: scale(1.08) rotate(2deg);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
-  }
-  .animate-pulse-scale {
-    animation: pulse-scale 3.5s ease-in-out infinite;
-  }
+        /* Card Animation 2: Wiggle and Rotate */
+        @keyframes wiggle-rotate {
+          0% {
+            transform: rotate(2deg) translateX(0px);
+          }
+          10% {
+            transform: rotate(4deg) translateX(2px);
+          }
+          20% {
+            transform: rotate(1deg) translateX(-1px);
+          }
+          30% {
+            transform: rotate(5deg) translateX(3px);
+          }
+          40% {
+            transform: rotate(0deg) translateX(-2px);
+          }
+          50% {
+            transform: rotate(3deg) translateX(1px);
+          }
+          60% {
+            transform: rotate(-1deg) translateX(-3px);
+          }
+          70% {
+            transform: rotate(4deg) translateX(2px);
+          }
+          80% {
+            transform: rotate(1deg) translateX(-1px);
+          }
+          90% {
+            transform: rotate(2deg) translateX(1px);
+          }
+          100% {
+            transform: rotate(2deg) translateX(0px);
+          }
+        }
+        .animate-wiggle-rotate {
+          animation: wiggle-rotate 3s ease-in-out infinite;
+        }
 
-  /* Card Animation 4: Pendulum Swing */
-  @keyframes swing-pendulum {
-    0%, 100% { 
-      transform: rotate(2deg) translateY(0px);
-    }
-    25% { 
-      transform: rotate(-4deg) translateY(-5px);
-    }
-    50% { 
-      transform: rotate(6deg) translateY(0px);
-    }
-    75% { 
-      transform: rotate(-3deg) translateY(-3px);
-    }
-  }
-  .animate-swing-pendulum {
-    animation: swing-pendulum 4.5s ease-in-out infinite;
-    transform-origin: top center;
-  }
+        /* Card Animation 3: Pulse Scale */
+        @keyframes pulse-scale {
+          0%,
+          100% {
+            transform: scale(1) rotate(-2deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+          }
+          50% {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+          }
+        }
+        .animate-pulse-scale {
+          animation: pulse-scale 3.5s ease-in-out infinite;
+        }
 
-  /* Card Animation 5: Wave Motion */
-  @keyframes wave-motion {
-    0%, 100% { 
-      transform: translateY(0px) translateX(0px) rotate(-2deg);
-    }
-    25% { 
-      transform: translateY(-10px) translateX(5px) rotate(1deg);
-    }
-    50% { 
-      transform: translateY(5px) translateX(-3px) rotate(-3deg);
-    }
-    75% { 
-      transform: translateY(-5px) translateX(7px) rotate(2deg);
-    }
-  }
-  .animate-wave-motion {
-    animation: wave-motion 5s ease-in-out infinite;
-  }
+        /* Card Animation 4: Pendulum Swing */
+        @keyframes swing-pendulum {
+          0%,
+          100% {
+            transform: rotate(2deg) translateY(0px);
+          }
+          25% {
+            transform: rotate(-4deg) translateY(-5px);
+          }
+          50% {
+            transform: rotate(6deg) translateY(0px);
+          }
+          75% {
+            transform: rotate(-3deg) translateY(-3px);
+          }
+        }
+        .animate-swing-pendulum {
+          animation: swing-pendulum 4.5s ease-in-out infinite;
+          transform-origin: top center;
+        }
 
-  /* Card Animation 6: Spiral Dance */
-  @keyframes spiral-dance {
-    0% { 
-      transform: rotate(2deg) scale(1) translateY(0px);
-    }
-    16% { 
-      transform: rotate(15deg) scale(1.03) translateY(-3px);
-    }
-    33% { 
-      transform: rotate(-10deg) scale(0.98) translateY(2px);
-    }
-    50% { 
-      transform: rotate(20deg) scale(1.05) translateY(-5px);
-    }
-    66% { 
-      transform: rotate(-15deg) scale(0.97) translateY(3px);
-    }
-    83% { 
-      transform: rotate(8deg) scale(1.02) translateY(-2px);
-    }
-    100% { 
-      transform: rotate(2deg) scale(1) translateY(0px);
-    }
-  }
-  .animate-spiral-dance {
-    animation: spiral-dance 6s ease-in-out infinite;
-  }
+        /* Card Animation 5: Wave Motion */
+        @keyframes wave-motion {
+          0%,
+          100% {
+            transform: translateY(0px) translateX(0px) rotate(-2deg);
+          }
+          25% {
+            transform: translateY(-10px) translateX(5px) rotate(1deg);
+          }
+          50% {
+            transform: translateY(5px) translateX(-3px) rotate(-3deg);
+          }
+          75% {
+            transform: translateY(-5px) translateX(7px) rotate(2deg);
+          }
+        }
+        .animate-wave-motion {
+          animation: wave-motion 5s ease-in-out infinite;
+        }
 
-  /* Hover effects enhancement */
-  .grid > div:hover {
-    animation-play-state: paused;
-    z-index: 10;
-  }
-`}</style>
+        /* Card Animation 6: Spiral Dance */
+        @keyframes spiral-dance {
+          0% {
+            transform: rotate(2deg) scale(1) translateY(0px);
+          }
+          16% {
+            transform: rotate(15deg) scale(1.03) translateY(-3px);
+          }
+          33% {
+            transform: rotate(-10deg) scale(0.98) translateY(2px);
+          }
+          50% {
+            transform: rotate(20deg) scale(1.05) translateY(-5px);
+          }
+          66% {
+            transform: rotate(-15deg) scale(0.97) translateY(3px);
+          }
+          83% {
+            transform: rotate(8deg) scale(1.02) translateY(-2px);
+          }
+          100% {
+            transform: rotate(2deg) scale(1) translateY(0px);
+          }
+        }
+        .animate-spiral-dance {
+          animation: spiral-dance 6s ease-in-out infinite;
+        }
+
+        /* Hover effects enhancement */
+        .grid > div:hover {
+          animation-play-state: paused;
+          z-index: 10;
+        }
+      `}</style>
     </section>
   );
 }
