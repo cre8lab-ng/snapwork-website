@@ -51,8 +51,6 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-
-
       {/* Content */}
       <div className="relative z-10 py-20 px-4">
         {/* Hero Section */}
@@ -70,9 +68,10 @@ export default function ServicesPage() {
               .wavy-animation {
                 animation: wavy 2s ease-in-out infinite;
               }
-              
+
               @keyframes wavy {
-                0%, 100% {
+                0%,
+                100% {
                   transform: translateX(0) rotate(0deg);
                 }
                 25% {
@@ -86,11 +85,9 @@ export default function ServicesPage() {
                 }
               }
             `}</style>
-           
           </div>
-          <p
-            className="text-xl max-w-2xl mx-auto leading-relaxed text-darkblue font-mediums"
-          >
+
+          <p className="text-center mx-auto mt-4 sm:mt-6 md:mt-8 lg:mt-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium  max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl text-darkblue">
             Discover our premium range of professional services, crafted to
             exceed your expectations
           </p>
@@ -98,9 +95,7 @@ export default function ServicesPage() {
 
         {/* Category Filter */}
         <div className="flex justify-center mb-16">
-          <div
-            className="backdrop-blur-lg rounded-2xl p-2 border shadow-lg bg-gray-100 border-lightblue-200"
-          >
+          <div className="backdrop-blur-lg rounded-2xl p-2 border shadow-lg bg-gray-100 border-lightblue-200">
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <button
@@ -191,16 +186,11 @@ export default function ServicesPage() {
                             : "var(--color-lightblue-200)",
                       }}
                     >
-                      <Icon
-                        name={service.icon}
-                        size="w-6 h-6"
-                      />
+                      <Icon name={service.icon} size="w-6 h-6" />
                     </div>
 
                     {/* Title */}
-                    <h3
-                      className="text-base font-semibold leading-tight mt-6 mb-2 text-darkblue"
-                    >
+                    <h3 className="text-base font-semibold leading-tight mt-6 mb-2 text-darkblue">
                       {service.title}
                     </h3>
                   </div>
