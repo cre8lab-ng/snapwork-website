@@ -20,7 +20,7 @@ const professionals = [
   },
 ];
 
-export default function ServiceProfessional() {
+export default function JoinUs() {
   const [index, setIndex] = useState(0);
 
   const handleNext = () => setIndex((index + 1) % professionals.length);
