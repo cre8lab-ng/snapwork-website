@@ -30,7 +30,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section className="pt-8 px-4 mb-16 sm:mb-20">
+    <section className="section-spacing px-4">
       <SectionHeader
         title="Why Us?"
         subtitle="Your go-to platform for trusted providers, fair prices, and services done right the first time."
@@ -69,10 +69,10 @@ export default function WhyUs() {
                 />
               </div>
 
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-darkblue mt-8 sm:mt-12 md:mt-16 mb-2 sm:mb-3 md:mb-4 px-2">
+              <h3 className="text-h3 mt-8 sm:mt-12 md:mt-16 element-spacing px-2">
                 {reason.title}
               </h3>
-              <p className="text-sm sm:text-base text-dark mt-2 sm:mt-3 leading-relaxed px-2 sm:px-3">
+              <p className="text-body mt-2 sm:mt-3 leading-relaxed px-2 sm:px-3">
                 {reason.description}
               </p>
             </div>

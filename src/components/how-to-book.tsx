@@ -43,20 +43,20 @@ export default function HowToBook() {
       ></div>
 
       <div className="grid md:grid-cols-2 items-center max-w-full relative z-10">
-        <div className="space-y-10 px-4 md:px-20 pt-48 md:pt-40 lg:pt-20 pb-12 md:pb-0">
+        <div className="space-y-10 section-spacing px-4 md:px-20">
           {/* How it Works heading */}
           <div className="relative">
-            <h2 className="text-darkblue text-5xl md:text-8xl font-black leading-tight tracking-tight drop-shadow-lg">
+            <h1 className="text-hero leading-tight tracking-tight drop-shadow-lg">
               How to book
-            </h2>
+            </h1>
           </div>
 
           {/* Subtitle */}
           <div className="relative">
-            <p className="text-xl md:text-2xl font-medium text-darkblue/70 tracking-wide leading-relaxed mb-2">
+            <p className="text-subtitle tracking-wide leading-relaxed element-spacing">
               Booking on Snapwork is simple and straightforward!
             </p>
-            <p className="text-lg md:text-xl text-darkblue/60 leading-relaxed">
+            <p className="text-body leading-relaxed">
               Get started in these four easy steps
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function HowToBook() {
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-110">
                   {step.number}
                 </div>
-                <p className="text-lg md:text-xl text-darkblue/80 leading-relaxed pt-2 group-hover:text-darkblue transition-colors duration-300">
+                <p className="text-body leading-relaxed pt-2 group-hover:text-darkblue transition-colors duration-300">
                   {step.title}
                 </p>
               </div>

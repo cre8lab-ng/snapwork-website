@@ -13,13 +13,13 @@ export default function Footer() {
   const isOpen = (section: string) => openSection === section;
 
   return (
-    <footer className="bg-darkblue text-white px-6 lg:px-16 pt-16 pb-8">
+    <footer className="bg-darkblue text-white section-spacing px-6 lg:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Main content grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6">
           {/* Newsletter signup section */}
           <div className="lg:col-span-1 lg:pr-8">
-            <h2 className="text-xl font-bold mb-8 leading-relaxed">
+            <h2 className="text-h2 component-spacing leading-relaxed text-white">
               Stay updated with Snapwork by
               signing up for our newsletter
             </h2>
@@ -41,7 +41,7 @@ export default function Footer() {
               className="flex justify-between items-center lg:block cursor-pointer lg:cursor-default"
               onClick={() => toggleSection("company")}
             >
-              <h3 className="text-lg font-semibold mb-4 tracking-wide">COMPANY</h3>
+              <h3 className="text-h3 element-spacing tracking-wide text-white">COMPANY</h3>
               <div className="lg:hidden">
                 <Image
                   src="/images/dropdown.svg"
@@ -57,10 +57,10 @@ export default function Footer() {
                 isOpen("company") ? "block" : "hidden lg:block"
               } text-blue-100`}
             >
-              <li className="hover:text-white cursor-pointer transition-colors">About Us</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Join as a service provider</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Terms of use</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Privacy Policy</li>
+              <li className="hover:text-white cursor-pointer transition-colors text-body">About Us</li>
+              <li className="hover:text-white cursor-pointer transition-colors text-body">Join as a service provider</li>
+              <li className="hover:text-white cursor-pointer transition-colors text-body">Terms of use</li>
+              <li className="hover:text-white cursor-pointer transition-colors text-body">Privacy Policy</li>
             </ul>
           </div>
 
@@ -70,7 +70,7 @@ export default function Footer() {
               className="flex justify-between items-center lg:block cursor-pointer lg:cursor-default"
               onClick={() => toggleSection("quick")}
             >
-              <h3 className="text-lg font-semibold mb-4 tracking-wide">QUICK LINKS</h3>
+              <h3 className="text-h3 element-spacing tracking-wide text-white">QUICK LINKS</h3>
               <div className="lg:hidden">
                 <Image
                   src="/images/dropdown.svg"
@@ -86,10 +86,10 @@ export default function Footer() {
                 isOpen("quick") ? "block" : "hidden lg:block"
               } text-blue-100`}
             >
-              <li className="hover:text-white cursor-pointer transition-colors">Book Now</li>
-              <li className="hover:text-white cursor-pointer transition-colors">FAQ</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Get a quote</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Services</li>
+              <li className="hover:text-white cursor-pointer transition-colors text-body">Book Now</li>
+              <li className="hover:text-white cursor-pointer transition-colors text-body">FAQ</li>
+              <li className="hover:text-white cursor-pointer transition-colors text-body">Get a quote</li>
+              <li className="hover:text-white cursor-pointer transition-colors text-body">Services</li>
             </ul>
           </div>
 
@@ -99,7 +99,7 @@ export default function Footer() {
               className="flex justify-between items-center lg:block cursor-pointer lg:cursor-default"
               onClick={() => toggleSection("contact")}
             >
-              <h3 className="text-lg font-semibold mb-4 tracking-wide">CONTACT</h3>
+              <h3 className="text-h3 element-spacing tracking-wide text-white">CONTACT</h3>
               <div className="lg:hidden">
                 <Image
                   src="/images/dropdown.svg"
@@ -117,15 +117,15 @@ export default function Footer() {
             >
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="mail" />
-                <span>snap@work.ng</span>
+                <span className="text-body">snap@work.ng</span>
               </li>
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="whatsapp" />
-                <span>+23404059336711</span>
+                <span className="text-body">+23404059336711</span>
               </li>
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="phone" />
-                <span>+23404059336711</span>
+                <span className="text-body">+23404059336711</span>
               </li>
             </ul>
           </div>

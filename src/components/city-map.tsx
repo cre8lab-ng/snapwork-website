@@ -5,15 +5,15 @@ export default function Home() {
   const features = ["Now in 7 locations", "Loved by 100+", "Growing daily"];
 
   return (
-    <div className="flex flex-col items-center justify-center py-10 px-4 min-h-screen">
-      <h2 className="text-6xl font-bold text-center text-white">
+    <div className="flex flex-col items-center justify-center section-spacing px-4 min-h-screen">
+      <h2 className="text-h1 text-center text-white">
         Snapwork in your city
       </h2>
-      <div className="flex justify-center mb-10">
+      <div className="flex justify-center component-spacing">
         <Icon name="underline" color="stroke-orange-100" />
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full px-4 mt-6">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full px-4 element-spacing">
         <div className="flex-1 rounded-xl overflow-hidden max-w-[800px]">
           <Image
             src="/images/city-map.svg"
@@ -30,7 +30,7 @@ export default function Home() {
               key={index}
               className="bg-blue-400 px-4 py-3 rounded shadow flex items-center justify-between gap-2"
             >
-              <span className="text-white font-bold text-xl">{feature}</span>
+              <span className="text-white font-bold text-h3">{feature}</span>
               <Image
                 src="/images/check.svg"
                 alt="Feature Check"

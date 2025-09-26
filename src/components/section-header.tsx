@@ -16,13 +16,13 @@ export default function SectionHeader({
   className = "",
 }: SectionHeaderProps) {
   return (
-    <div className={`text-center mb-16 ${className}`}>
+    <div className={`text-center component-spacing ${className}`}>
       <div className="inline-block">
-        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold leading-tight drop-shadow-lg text-darkblue">
+        <h2 className="text-h1">
           {title}
-        </h3>
+        </h2>
         {showUnderline && (
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center element-spacing">
             <div className={animated ? "wavy-animation" : ""}>
               <Icon name="underline" color="stroke-orange-100" />
             </div>
@@ -31,7 +31,7 @@ export default function SectionHeader({
       </div>
 
       {subtitle && (
-        <p className="text-center mx-auto mt-4 sm:mt-6 md:mt-8 lg:mt-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl text-darkblue">
+        <p className="text-subtitle text-center mx-auto element-spacing max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
           {subtitle}
         </p>
       )}

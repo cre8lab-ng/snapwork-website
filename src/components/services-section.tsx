@@ -52,34 +52,29 @@ export default function ServicesPage() {
       : services.filter((service) => service.category === activeCategory);
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Content */}
-      <div className="relative z-10 pt-12 px-4">
-        {/* Hero Section */}
+    <section className="relative min-h-screen overflow-hidden">
+      <div className="relative z-10 section-spacing px-4">
         <SectionHeader
           title="Our Services"
-          subtitle="Discover our premium range of professional services, crafted to exceed your expectations"
-          animated={true}
+          subtitle="Discover a wide range of professional services tailored to meet your needs. From technical solutions to creative services, we've got you covered."
         />
 
-        {/* Category Filter */}
-        <div className="flex justify-center mb-16">
-          <div className="backdrop-blur-lg rounded-2xl p-2 border shadow-lg bg-gray-100 border-lightblue-200">
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
-                    activeCategory === category
-                      ? "text-white  bg-gradient-to-r from-blue-500 to-darkblue shadow-[0_10px_25px_rgba(20,39,94,0.25)]"
-                      : "text-darkblue bg-transparent hover:text-blue-600 "
-                  }`}
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
+        <div className="flex justify-center component-spacing">
+          <div className="flex flex-wrap justify-center gap-3 bg-white p-2 rounded-2xl shadow-lg">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
+                  activeCategory === category
+                    ? "bg-darkblue text-white shadow-lg"
+                    : "bg-gray-100 text-darkblue hover:bg-gray-200"
+                }`}
+                variant="primary"
+              >
+                {category}
+              </Button>
+            ))}
           </div>
         </div>
 
@@ -125,7 +120,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base font-semibold leading-tight mt-6 mb-2 text-darkblue">
+                    <h3 className="text-h3 leading-tight mt-6 mb-2">
                       {service.title}
                     </h3>
                   </div>
@@ -135,6 +130,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -29,29 +29,29 @@ export default function GetAQuote() {
   return (
     <section className="w-full min-h-screen overflow-hidden relative">
       <div className="grid md:grid-cols-2 items-center max-w-full relative z-10">
-        <div className="space-y-10 px-4 md:px-20 pt-48 md:pt-40 lg:pt-20 pb-12 md:pb-0">
+        <div className="space-y-10 section-spacing px-4 md:px-20">
           {/* Enhanced intro text with animated underline */}
           <div className="relative">
-            <p className="text-xl md:text-2xl font-medium text-darkblue/70 tracking-wide leading-relaxed mb-2">
+            <p className="text-subtitle tracking-wide leading-relaxed element-spacing">
               Dependable partners for every business need from
             </p>
           </div>
 
           {/* Enhanced main heading with smooth transitions and color changes */}
           <div className="relative">
-            <h2
-            className={`text-darkblue text-5xl md:text-8xl font-black transition-all duration-500 leading-tight tracking-tight drop-shadow-lg ${
+            <h1
+            className={`text-hero transition-all duration-500 leading-tight tracking-tight drop-shadow-lg ${
               isVisible
                 ? "opacity-100 transform translate-y-0"
                 : "opacity-0 transform translate-y-4"
             }`}
           >
               {text}
-            </h2>
+            </h1>
           </div>
 
           {/* Enhanced description text */}
-          <p className="text-lg md:text-xl text-darkblue/60 leading-relaxed max-w-lg">
+          <p className="text-body leading-relaxed max-w-lg">
             Connect with skilled professionals who deliver quality work on time,
             every time.
             <span className="font-semibold text-darkblue/80">
