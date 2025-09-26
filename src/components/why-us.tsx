@@ -30,7 +30,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section className="pt-12 px-4">
+    <section className="pt-8 sm:pt-12 px-4 mb-16 sm:mb-20">
       <SectionHeader
         title="Why Us?"
         subtitle="Your go-to platform for trusted providers, fair prices, and services done right the first time."
@@ -38,7 +38,7 @@ export default function WhyUs() {
         showUnderline={true}
       />
  
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto justify-items-center">
   {reasons.map((reason, index) => {
     // Different animation patterns for each card
     const animationClass = [
@@ -53,16 +53,16 @@ export default function WhyUs() {
     return (
       <div
         key={index}
-        className={`rounded-[20px] p-2 h-[420px] text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer ${reason.bgColor} ${animationClass}`}
+        className={`rounded-[20px] p-3 sm:p-4 h-[380px] sm:h-[420px] md:h-[450px] text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer ${reason.bgColor} ${animationClass}`}
         style={{
           animationDelay: `${index * 300}ms`,
           animationDuration: `${3 + (index % 3)}s`,
         }}
       >
         {/* Image container */}
-        <div className="w-full h-[140px] relative mb-6 mx-auto mt-4">
-          <div className="w-full mb-8">
-            <div className="w-full h-[180px] mb-6 relative">
+        <div className="w-full h-[120px] sm:h-[140px] md:h-[160px] relative mb-4 sm:mb-6 mx-auto mt-2 sm:mt-4">
+          <div className="w-full mb-4 sm:mb-8">
+            <div className="w-full h-[140px] sm:h-[160px] md:h-[180px] mb-4 sm:mb-6 relative">
               <Image
                 src={reason.image}
                 alt={reason.alt}
@@ -73,10 +73,10 @@ export default function WhyUs() {
           </div>
         </div>
         
-        <h3 className="text-2xl font-bold text-darkblue mt-16 mb-4">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-darkblue mt-8 sm:mt-12 md:mt-16 mb-2 sm:mb-3 md:mb-4 px-2">
           {reason.title}
         </h3>
-        <p className="text-base text-dark mt-3 leading-relaxed">
+        <p className="text-sm sm:text-base text-dark mt-2 sm:mt-3 leading-relaxed px-2 sm:px-3">
           {reason.description}
         </p>
       </div>
