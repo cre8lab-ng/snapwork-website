@@ -51,38 +51,45 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Subtle floating elements */}
-      <div className="absolute inset-0">
-        <div 
-          className="absolute top-20 -left-20 w-80 h-80 rounded-full blur-3xl animate-pulse"
-          style={{ backgroundColor: "var(--color-darkblue)", opacity: 0.15 }}
-        ></div>
-        <div 
-          className="absolute top-40 -right-20 w-96 h-96 rounded-full blur-3xl animate-pulse delay-1000"
-          style={{ backgroundColor: "var(--color-orange-100)", opacity: 0.08 }}
-        ></div>
-        <div 
-          className="absolute bottom-20 left-1/3 w-72 h-72 rounded-full blur-3xl animate-pulse delay-2000"
-          style={{ backgroundColor: "var(--color-blue-300)", opacity: 0.12 }}
-        ></div>
-      </div>
+
 
       {/* Content */}
       <div className="relative z-10 py-20 px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <div className="inline-block">
-            <h2 className="text-6xl font-bold text-center text-darkblue">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight drop-shadow-lg text-darkblue">
               Our Services
-            </h2>
-            <div className="flex justify-center mb-10">
-              <Icon name="underline" color="stroke-orange-100" />
+            </h3>
+            <div className="flex justify-center mb-4">
+              <div className="wavy-animation">
+                <Icon name="underline" color="stroke-orange-100" />
+              </div>
             </div>
+            <style jsx>{`
+              .wavy-animation {
+                animation: wavy 2s ease-in-out infinite;
+              }
+              
+              @keyframes wavy {
+                0%, 100% {
+                  transform: translateX(0) rotate(0deg);
+                }
+                25% {
+                  transform: translateX(10px) rotate(5deg);
+                }
+                50% {
+                  transform: translateX(0) rotate(0deg);
+                }
+                75% {
+                  transform: translateX(-10px) rotate(-5deg);
+                }
+              }
+            `}</style>
            
           </div>
           <p
-            className="text-xl max-w-2xl mx-auto leading-relaxed"
-            style={{ color: "var(--color-blue-300)" }}
+            className="text-xl max-w-2xl mx-auto leading-relaxed text-darkblue font-mediums"
           >
             Discover our premium range of professional services, crafted to
             exceed your expectations
@@ -92,21 +99,17 @@ export default function ServicesPage() {
         {/* Category Filter */}
         <div className="flex justify-center mb-16">
           <div
-            className="backdrop-blur-lg rounded-2xl p-2 border shadow-lg"
-            style={{
-              backgroundColor: "var(--color-gray-100)",
-              borderColor: "var(--color-lightblue-200)",
-            }}
+            className="backdrop-blur-lg rounded-2xl p-2 border shadow-lg bg-gray-100 border-lightblue-200"
           >
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
+                  className={` px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
                     activeCategory === category
                       ? "text-white shadow-lg"
-                      : "hover:text-blue-600"
+                      : "hover:text-blue-600 "
                   }`}
                   style={
                     activeCategory === category
@@ -115,7 +118,7 @@ export default function ServicesPage() {
                           boxShadow: "0 10px 25px rgba(20, 39, 94, 0.25)",
                         }
                       : {
-                          color: "var(--color-blue-300)",
+                          color: "var(--color-darkblue)",
                           backgroundColor: "transparent",
                         }
                   }
@@ -152,12 +155,13 @@ export default function ServicesPage() {
                 <div
                   className={`
                   relative h-40 rounded-2xl p-4 cursor-pointer
-                  bg-white border
+                  border
                   shadow-md
                   transition-all duration-300 transform
                   hover:scale-105 hover:shadow-lg
                 `}
                   style={{
+                    backgroundColor: "#F5F9FF",
                     borderColor:
                       hoveredCard === index
                         ? "var(--color-blue-400)"
@@ -174,7 +178,7 @@ export default function ServicesPage() {
                     <div
                       className={`
                       w-10 h-10 rounded-lg flex items-center justify-center
-                      border transition-all duration-300
+                      border transition-all duration-300 mt-4
                     `}
                       style={{
                         backgroundColor:
@@ -190,15 +194,12 @@ export default function ServicesPage() {
                       <Icon
                         name={service.icon}
                         size="w-6 h-6"
-                        color="text-blue-600"
-                        style={{ color: "var(--color-blue-500)" }}
                       />
                     </div>
 
                     {/* Title */}
                     <h3
-                      className="text-sm font-semibold leading-tight mt-3 mb-2"
-                      style={{ color: "var(--color-blue-300)" }}
+                      className="text-base font-semibold leading-tight mt-6 mb-2 text-darkblue"
                     >
                       {service.title}
                     </h3>

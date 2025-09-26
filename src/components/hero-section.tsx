@@ -18,7 +18,7 @@ export default function HeroSection() {
               One Platform, <br />
               All your services
             </h3>
-            <p className="mt-4 sm:mt-6 md:mt-8 lg:mt-10 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium drop-shadow-lg max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+            <p className="mt-4 sm:mt-6 md:mt-8 lg:mt-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium drop-shadow-lg max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
               Easily get matched with trusted <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>professionals whether you need
             </p>
