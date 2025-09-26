@@ -79,8 +79,8 @@ export default function ServicesPage() {
         </div>
 
         {/* Services Grid */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
             {filteredServices.map((service, index) => (
               <div
                 key={index}
@@ -108,7 +108,7 @@ export default function ServicesPage() {
                     <div
                       className={`
                       w-10 h-10 rounded-lg flex items-center justify-center
-                      transition-all duration-300 mt-4
+                      transition-all duration-300 mb-3
                       ${
                         hoveredCard === index
                           ? "bg-transparent"
@@ -116,11 +116,11 @@ export default function ServicesPage() {
                       }
                     `}
                     >
-                      <Icon name={service.icon} size="w-6 h-6" />
+                      <Icon name={service.icon} size="w-5 h-5" />
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-h3 leading-tight mt-6 mb-2">
+                    <h3 className="text-sm font-semibold leading-tight text-darkblue">
                       {service.title}
                     </h3>
                   </div>

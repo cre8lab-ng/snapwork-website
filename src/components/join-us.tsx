@@ -31,9 +31,9 @@ export default function JoinUs() {
   const current = professionals[index];
 
   return (
-    <div className="bg-[#1E2A63] text-white section-spacing px-8 md:px-20">
+    <div className="bg-darkblue text-white section-spacing px-8 md:px-20">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center component-spacing">
-        <div className="text-h1 mb-6 md:mb-0 text-white">
+        <div className="text-h1 mb-6 md:mb-0 !text-white">
           Are You a Service Professional?
         </div>
         <Button className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#1E2A63] px-6 py-3 rounded-lg font-medium transition-colors" variant="primary">
@@ -54,11 +54,11 @@ export default function JoinUs() {
           </div>
         </div>
         <div className="w-full md:w-1/2 text-white">
-          <h2 className="text-h2 element-spacing text-white">
+          <h2 className="text-h2 element-spacing !text-white">
             {current.name}
           </h2>
           <div className="border-b border-white w-full max-w-md mb-6"></div>
-          <p className="text-body text-gray-100 leading-relaxed mb-8 max-w-lg">
+          <p className="text-body !text-white leading-relaxed mb-8 max-w-lg">
             {current.bio}
           </p>
           <div className="flex items-center gap-4">

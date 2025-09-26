@@ -44,14 +44,14 @@ const FaqView = () => {
       <div className="hidden md:flex p-6 md:p-12 bg-white">
         <div className="rounded-2xl w-full flex shadow-xl gap-6 bg-white">
           <div className="w-1/2 p-6 md:p-10 space-y-6">
-            <h2 className="text-h1 mb-4">FAQs</h2>
+            <h2 className="text-h1 mb-4 !text-darkblue">FAQs</h2>
             <div className="space-y-4">
               {faqData.map((faq) => (
                 <button
                   key={faq.question}
-                  className={`w-full text-left border-2 px-4 py-3 md:px-6 md:py-4 rounded-lg text-body font-bold transition text-darkblue ${
+                  className={`w-full text-left border-2 px-4 py-3 md:px-6 md:py-4 rounded-lg !text-body font-bold transition text-darkblue ${
                     selectedFaq === faq.question 
-                      ? "bg-darkblue text-white border-darkblue" 
+                      ? "bg-darkblue !text-white border-darkblue" 
                       : "bg-white border-gray-300 hover:border-darkblue"
                   }`}
                   onClick={() => setSelectedFaq(faq.question)}
@@ -69,8 +69,8 @@ const FaqView = () => {
 
           {/* Answers */}
           <div className="w-1/2 p-6 md:p-10 flex flex-col justify-start">
-            <h2 className="text-h1 mb-4">Answers</h2>
-            <div className="rounded-lg bg-darkblue text-body leading-relaxed text-white h-[300px] md:h-[400px] overflow-auto p-4 md:p-6">
+            <h2 className="text-h1 mb-4 !text-darkblue">Answers</h2>
+            <div className="rounded-lg bg-darkblue !text-body leading-relaxed !text-white h-[300px] md:h-[400px] overflow-auto p-4 md:p-6">
               <p className="whitespace-pre-line">{selected ? selected.answer : ""}</p>
             </div>
           </div>

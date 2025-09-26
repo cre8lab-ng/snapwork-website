@@ -110,14 +110,14 @@ export function Navbar() {
                 className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200 text-center py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Why Us?
+                About Us
               </Link>
               <Link
                 href="#about"
                 className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200 text-center py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Services
+                Why Us?
               </Link>
               <Link
                 href="#pricing"
