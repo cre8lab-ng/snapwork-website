@@ -3,34 +3,38 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="w-full min-h-screen">
-      <main className="flex flex-col items-center text-center px-10 pt-6">
-        <div className="relative w-full">
+    <div className="w-full">
+      <main className="flex flex-col items-center text-center px-4 sm:px-6 md:px-10 pt-4 sm:pt-6">
+        <div className="relative w-full max-w-6xl">
           <Image
             src="/images/hero-illustration-workers.svg"
             alt="Snapwork Logo"
             width={800}
             height={600}
-            className="w-full rounded-lg"
+            className="w-full rounded-lg h-[500px] sm:h-[600px] md:h-[700px] lg:h-auto object-cover"
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-start pt-26 text-center px-4 text-white">
-            <h3 className="text-5xl md:text-6xl font-bold leading-tight drop-shadow-lg">
+          <div className="absolute inset-0 flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-20 lg:pt-26 text-center px-2 sm:px-4 text-white">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight drop-shadow-lg mb-4 sm:mb-6 md:mb-8">
               One Platform, <br />
               All your services
             </h3>
-            <p className="mt-10 text-md md:text-2xl font-medium drop-shadow-lg">
-              Easily get matched with trusted <br />
-              professionals whether you need
+            <p className="mt-4 sm:mt-6 md:mt-8 lg:mt-10 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium drop-shadow-lg max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+              Easily get matched with trusted <br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>professionals whether you need
             </p>
 
-            <div className="flex justify-center mt-6 cursor-pointer">
+            <div className="flex justify-center mt-4 sm:mt-6 cursor-pointer">
               <a
                 href="https://book-snapwork.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:block"
+                className="block"
               >
-                <Button variant="secondary" size="lg">
+                <Button 
+                  variant="secondary" 
+                  size="lg"
+                  className="text-sm sm:text-base px-6 py-2 sm:px-8 sm:py-3"
+                >
                   Book Now
                 </Button>
               </a>
