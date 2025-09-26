@@ -5,8 +5,8 @@ import WhyUs from "@/components/why-us";
 import ServiceProvider from "@/components/service-provider";
 import Faq from "@/components/faq";
 import HeroSection from "@/components/hero-section";
-import Quote from "@/components/quote";
 import { Navbar } from "@/components/navbar";
+import GetAQuote from "@/components/get-a-quote";
 
 export default function LandingPage() {
   return (
@@ -16,7 +16,7 @@ export default function LandingPage() {
       <HeroSection />
       <ServicesSection />
       <WhyUs />
-      <Quote/>
+      <GetAQuote/>
       {/* <CityMap /> */}
       <ServiceProvider />
       <Faq />

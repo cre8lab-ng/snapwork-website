@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 
-const rotatingWords = [
-  { text: "Cleaners"},
-  { text: "Plumbers" },
-  { text: "Electricians" },
-  { text: "Painters" },
-  { text: "Tailors" },
-];
+// const rotatingWords = [
+//   { text: "Cleaners"},
+//   { text: "Plumbers" },
+//   { text: "Electricians" },
+//   { text: "Painters" },
+//   { text: "Tailors" },
+// ];
 
-export default function Quote() {
-  const [index, setIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
+export default function GetAQuote() {
+  // const [index, setIndex] = useState(0);
+  // const [isVisible, setIsVisible] = useState(true);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setIndex((i) => (i + 1) % rotatingWords.length);
-        setIsVisible(true);
-      }, 300);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIsVisible(false);
+  //     setTimeout(() => {
+  //       setIndex((i) => (i + 1) % rotatingWords.length);
+  //       setIsVisible(true);
+  //     }, 300);
+  //   }, 3000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
-  const { text } = rotatingWords[index];
+  // const { text } = rotatingWords[index];
 
   return (
     <section className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 spiral-edges overflow-hidden relative">
@@ -49,12 +49,12 @@ export default function Quote() {
           </div>
 
           {/* Enhanced main heading with smooth transitions and color changes */}
-          <div className="relative">
+          {/* <div className="relative">
             <h2 className={`text-darkblue text-5xl md:text-8xl font-black transition-all duration-500 leading-tight tracking-tight drop-shadow-lg  ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'}`}>
               {text}
             </h2>
            
-          </div>
+          </div> */}
 
           {/* Enhanced description text */}
           <p className="text-lg md:text-xl text-darkblue/60 leading-relaxed max-w-lg">
