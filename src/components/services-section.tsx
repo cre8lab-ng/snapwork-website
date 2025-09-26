@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Icon from "./icon";
+import { Button } from "./ui/button";
+import SectionHeader from "./section-header";
 
 const services = [
   {
@@ -52,85 +54,30 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Content */}
-      <div className="relative z-10 py-20 px-4">
+      <div className="relative z-10 pt-12 px-4">
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <div className="inline-block">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight drop-shadow-lg text-darkblue">
-              Our Services
-            </h3>
-            <div className="flex justify-center mb-4">
-              <div className="wavy-animation">
-                <Icon name="underline" color="stroke-orange-100" />
-              </div>
-            </div>
-            <style jsx>{`
-              .wavy-animation {
-                animation: wavy 2s ease-in-out infinite;
-              }
-
-              @keyframes wavy {
-                0%,
-                100% {
-                  transform: translateX(0) rotate(0deg);
-                }
-                25% {
-                  transform: translateX(10px) rotate(5deg);
-                }
-                50% {
-                  transform: translateX(0) rotate(0deg);
-                }
-                75% {
-                  transform: translateX(-10px) rotate(-5deg);
-                }
-              }
-            `}</style>
-          </div>
-
-          <p className="text-center mx-auto mt-4 sm:mt-6 md:mt-8 lg:mt-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium  max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl text-darkblue">
-            Discover our premium range of professional services, crafted to
-            exceed your expectations
-          </p>
-        </div>
+        <SectionHeader
+          title="Our Services"
+          subtitle="Discover our premium range of professional services, crafted to exceed your expectations"
+          animated={true}
+        />
 
         {/* Category Filter */}
         <div className="flex justify-center mb-16">
           <div className="backdrop-blur-lg rounded-2xl p-2 border shadow-lg bg-gray-100 border-lightblue-200">
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
-                <button
+                <Button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={` px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
+                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
                     activeCategory === category
-                      ? "text-white shadow-lg"
-                      : "hover:text-blue-600 "
+                      ? "text-white  bg-gradient-to-r from-blue-500 to-darkblue shadow-[0_10px_25px_rgba(20,39,94,0.25)]"
+                      : "text-darkblue bg-transparent hover:text-blue-600 "
                   }`}
-                  style={
-                    activeCategory === category
-                      ? {
-                          background: `linear-gradient(to right, var(--color-blue-500), var(--color-darkblue))`,
-                          boxShadow: "0 10px 25px rgba(20, 39, 94, 0.25)",
-                        }
-                      : {
-                          color: "var(--color-darkblue)",
-                          backgroundColor: "transparent",
-                        }
-                  }
-                  onMouseEnter={(e) => {
-                    if (activeCategory !== category) {
-                      e.currentTarget.style.backgroundColor =
-                        "var(--color-lightblue-100)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (activeCategory !== category) {
-                      e.currentTarget.style.backgroundColor = "transparent";
-                    }
-                  }}
                 >
                   {category}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
@@ -150,22 +97,15 @@ export default function ServicesPage() {
                 <div
                   className={`
                   relative h-40 rounded-2xl p-4 cursor-pointer
-                  border
-                  shadow-md
+                  border bg-[#F5F9FF]
                   transition-all duration-300 transform
-                  hover:scale-105 hover:shadow-lg
+                  hover:scale-105
+                  ${
+                    hoveredCard === index
+                      ? "border-blue-400 shadow-[0_10px_25px_rgba(175,209,250,0.3)]"
+                      : "border-lightblue-200 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)]"
+                  }
                 `}
-                  style={{
-                    backgroundColor: "#F5F9FF",
-                    borderColor:
-                      hoveredCard === index
-                        ? "var(--color-blue-400)"
-                        : "var(--color-lightblue-200)",
-                    boxShadow:
-                      hoveredCard === index
-                        ? "0 10px 25px rgba(175, 209, 250, 0.3)"
-                        : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-                  }}
                 >
                   {/* Content */}
                   <div className="flex flex-col h-full justify-center items-center text-center">
@@ -173,18 +113,13 @@ export default function ServicesPage() {
                     <div
                       className={`
                       w-10 h-10 rounded-lg flex items-center justify-center
-                      border transition-all duration-300 mt-4
+                      transition-all duration-300 mt-4
+                      ${
+                        hoveredCard === index
+                          ? "bg-transparent"
+                          : "bg-lightblue-100"
+                      }
                     `}
-                      style={{
-                        backgroundColor:
-                          hoveredCard === index
-                            ? "var(--color-lightblue-200)"
-                            : "var(--color-lightblue-100)",
-                        borderColor:
-                          hoveredCard === index
-                            ? "var(--color-blue-400)"
-                            : "var(--color-lightblue-200)",
-                      }}
                     >
                       <Icon name={service.icon} size="w-6 h-6" />
                     </div>
@@ -199,22 +134,6 @@ export default function ServicesPage() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-1 h-1 bg-white/20 rounded-full animate-pulse`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`,
-            }}
-          ></div>
-        ))}
       </div>
     </div>
   );
