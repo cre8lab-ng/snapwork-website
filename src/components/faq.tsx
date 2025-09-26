@@ -31,10 +31,16 @@ const faqData = [
 
 const FaqView = () => {
   const [selectedFaq, setSelectedFaq] = useState(faqData[4].question); // Start with "Is Snapwork free to use?"
+  const [expandedFaq, setExpandedFaq] = useState<string | null>(faqData[4].question); // For mobile accordion
   const selected = faqData.find((faq) => faq.question === selectedFaq);
+
+  const toggleFaq = (question: string) => {
+    setExpandedFaq(expandedFaq === question ? null : question);
+  };
 
   return (
     <>
+      {/* Desktop View */}
       <div className="hidden md:flex p-6 md:p-12 bg-white">
         <div className="rounded-2xl w-full flex shadow-xl gap-6 bg-white">
           <div className="w-1/2 p-6 md:p-10 space-y-6">
@@ -71,33 +77,56 @@ const FaqView = () => {
         </div>
       </div>
 
-      {/* Mobile View */}
-      <div className="md:hidden min-h-screen bg-lightblue-100 flex flex-col justify-between p-4 rounded-[20px] text-darkblue shadow-xl">
-        {/* Answer Section */}
-        <div className="space-y-4">
-          <h2 className="text-3xl font-extrabold">FAQs</h2>
-          <p className="text-base leading-relaxed whitespace-pre-line">
-            {selected ? selected.answer : ""}
-          </p>
+      {/* Mobile View - Accordion Style */}
+      <div className="md:hidden bg-white p-4 rounded-[20px] shadow-xl">
+        <div className="mb-6">
+          <h2 className="text-2xl font-extrabold text-darkblue mb-2">Frequently Asked Questions</h2>
+          <p className="text-sm text-gray-600">Tap on any question to see the answer</p>
         </div>
 
-        {/* Scrollable Questions */}
-        <div className="mt-6 overflow-x-auto">
-          <div className="flex gap-4 w-max pb-2">
-            {faqData.map((faq) => (
+        <div className="space-y-3">
+          {faqData.map((faq) => (
+            <div key={faq.question} className="border border-gray-200 rounded-xl overflow-hidden">
               <button
-                key={faq.question}
-                onClick={() => setSelectedFaq(faq.question)}
-                className={`min-w-[200px] whitespace-nowrap px-4 py-3 rounded-xl shadow-md text-sm font-semibold border-2 ${
-                  selectedFaq === faq.question
-                    ? "bg-darkblue text-white border-darkblue"
-                    : "bg-white text-darkblue border-gray-300"
-                }`}
+                onClick={() => toggleFaq(faq.question)}
+                className="w-full px-4 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center"
               >
-                {faq.question}
+                <span className="text-sm font-semibold text-darkblue pr-4 leading-tight">
+                  {faq.question}
+                </span>
+                <div className="flex-shrink-0">
+                  <svg
+                    className={`w-5 h-5 text-darkblue transition-transform duration-200 ${
+                      expandedFaq === faq.question ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
               </button>
-            ))}
-          </div>
+              
+              <div className={`transition-all duration-300 ease-in-out ${
+                expandedFaq === faq.question 
+                  ? 'max-h-96 opacity-100' 
+                  : 'max-h-0 opacity-0'
+              } overflow-hidden`}>
+                <div className="px-4 py-4 bg-darkblue text-white">
+                  <p className="text-sm leading-relaxed whitespace-pre-line">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6 pt-4 border-t border-gray-200">
+          <Link href="/" className="text-darkblue text-sm font-medium underline">
+            See general FAQs →
+          </Link>
         </div>
       </div>
     </>
