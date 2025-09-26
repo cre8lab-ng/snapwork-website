@@ -3,18 +3,37 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <div className="w-full px-4 sm:px-6 md:px-10 pt-4 sm:pt-6">
-      <header className="w-full flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-blue-100 rounded-2xl relative">
+    <div className={`w-full transition-all duration-300 ${
+      isScrolled 
+        ? 'fixed top-0 left-0 right-0 z-50 px-0 py-2 shadow-lg bg-blue-100' 
+        : 'px-4 sm:px-6 md:px-10 pt-4 sm:pt-6'
+    }`}>
+      <header className={`w-full flex items-center justify-between relative transition-all duration-300 ${
+        isScrolled 
+          ? 'px-4 sm:px-6 md:px-10 py-3 sm:py-4' 
+          : 'px-4 sm:px-6 py-3 sm:py-4 bg-blue-100 rounded-2xl'
+      }`}>
         {/* Logo */}
         <div className="flex items-center">
           <Image
