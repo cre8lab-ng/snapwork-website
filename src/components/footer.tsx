@@ -13,8 +13,8 @@ export default function Footer() {
   const isOpen = (section: string) => openSection === section;
 
   return (
-    <footer className="bg-darkblue text-white section-spacing px-6 lg:px-16">
-      <div className="max-w-7xl mx-auto">
+    <footer className="bg-darkblue text-white section-spacing px-16">
+      <div className="mx-auto">
         {/* Main content grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6">
           {/* Newsletter signup section */}
@@ -41,7 +41,7 @@ export default function Footer() {
               className="flex justify-between items-center lg:block cursor-pointer lg:cursor-default"
               onClick={() => toggleSection("company")}
             >
-              <h3 className="text-h3 element-spacing tracking-wide !text-white">COMPANY</h3>
+              <h3 className="text-medium font-semibold element-spacing tracking-wide !text-white">COMPANY</h3>
               <div className="lg:hidden">
                 <Image
                   src="/images/dropdown.svg"
@@ -70,7 +70,7 @@ export default function Footer() {
               className="flex justify-between items-center lg:block cursor-pointer lg:cursor-default"
               onClick={() => toggleSection("quick")}
             >
-              <h3 className="text-h3 element-spacing tracking-wide !text-white">QUICK LINKS</h3>
+              <h3 className="text-medium font-semibold element-spacing tracking-wide !text-white">QUICK LINKS</h3>
               <div className="lg:hidden">
                 <Image
                   src="/images/dropdown.svg"
@@ -99,7 +99,7 @@ export default function Footer() {
               className="flex justify-between items-center lg:block cursor-pointer lg:cursor-default"
               onClick={() => toggleSection("contact")}
             >
-              <h3 className="text-h3 element-spacing tracking-wide !text-white">CONTACT</h3>
+              <h3 className="text-medium font-semibold element-spacing tracking-wide !text-white">CONTACT</h3>
               <div className="lg:hidden">
                 <Image
                   src="/images/dropdown.svg"

@@ -41,18 +41,18 @@ const FaqView = () => {
   return (
     <>
       {/* Desktop View */}
-      <div className="hidden md:flex p-6 md:p-12 bg-white">
-        <div className="rounded-2xl w-full flex shadow-xl gap-6 bg-white">
+      <div className="hidden md:flex p-6 md:p-12 bg-gradient-to-br from-blue-50 to-white">
+        <div className="rounded-3xl w-full flex shadow-2xl border border-blue-100/50 gap-6 bg-white/80 backdrop-blur-sm">
           <div className="w-1/2 p-6 md:p-10 space-y-6">
             <h2 className="text-h1 mb-4 !text-darkblue">FAQs</h2>
             <div className="space-y-4">
               {faqData.map((faq) => (
                 <button
                   key={faq.question}
-                  className={`w-full text-left border-2 px-4 py-3 md:px-6 md:py-4 rounded-lg !text-body font-bold transition text-darkblue ${
+                  className={`w-full text-left border-2 px-4 py-3 md:px-6 md:py-4 rounded-xl !text-body font-bold transition-all duration-300 transform hover:scale-[1.02] text-darkblue shadow-sm ${
                     selectedFaq === faq.question 
-                      ? "bg-darkblue !text-white border-darkblue" 
-                      : "bg-white border-gray-300 hover:border-darkblue"
+                      ? "bg-gradient-to-r from-darkblue to-blue-600 !text-white border-darkblue shadow-lg" 
+                      : "bg-gradient-to-r from-white to-blue-50 border-blue-200 hover:border-darkblue hover:shadow-md"
                   }`}
                   onClick={() => setSelectedFaq(faq.question)}
                 >
@@ -70,7 +70,7 @@ const FaqView = () => {
           {/* Answers */}
           <div className="w-1/2 p-6 md:p-10 flex flex-col justify-start">
             <h2 className="text-h1 mb-4 !text-darkblue">Answers</h2>
-            <div className="rounded-lg bg-darkblue !text-body leading-relaxed !text-white h-[300px] md:h-[400px] overflow-auto p-4 md:p-6">
+            <div className="rounded-xl bg-gradient-to-br from-darkblue to-blue-700 !text-body leading-relaxed !text-white h-[300px] md:h-[400px] overflow-auto p-4 md:p-6 shadow-inner border border-blue-600/30">
               <p className="whitespace-pre-line">{selected ? selected.answer : ""}</p>
             </div>
           </div>
@@ -78,7 +78,7 @@ const FaqView = () => {
       </div>
 
       {/* Mobile View - Accordion Style */}
-      <div className="md:hidden bg-white p-4 rounded-[20px] shadow-xl">
+      <div className="md:hidden bg-gradient-to-br from-white to-blue-50 p-4 rounded-3xl shadow-2xl border border-blue-100/50 backdrop-blur-sm">
         <div className="mb-6">
           <h2 className="text-h2 mb-2">Frequently Asked Questions</h2>
           <p className="text-body">Tap on any question to see the answer</p>
@@ -86,10 +86,10 @@ const FaqView = () => {
 
         <div className="space-y-3">
           {faqData.map((faq) => (
-            <div key={faq.question} className="border border-gray-200 rounded-xl overflow-hidden">
+            <div key={faq.question} className="border-2 border-blue-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01] bg-white/80 backdrop-blur-sm">
               <button
                 onClick={() => toggleFaq(faq.question)}
-                className="w-full px-4 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center"
+                className="w-full px-4 py-4 text-left bg-gradient-to-r from-blue-50 to-white hover:from-blue-100 hover:to-blue-50 transition-all duration-300 flex justify-between items-center border-b border-blue-100"
               >
                 <span className="text-sm font-semibold text-darkblue pr-4 leading-tight">
                   {faq.question}
@@ -113,7 +113,7 @@ const FaqView = () => {
                   ? 'max-h-96 opacity-100' 
                   : 'max-h-0 opacity-0'
               } overflow-hidden`}>
-                <div className="px-4 py-4 bg-darkblue text-white">
+                <div className="px-4 py-4 bg-gradient-to-br from-darkblue to-blue-700 text-white shadow-inner">
                   <p className="text-sm leading-relaxed whitespace-pre-line">
                     {faq.answer}
                   </p>
@@ -123,7 +123,7 @@ const FaqView = () => {
           ))}
         </div>
 
-        <div className="mt-6 pt-4 border-t border-gray-200">
+        <div className="mt-6 pt-4 border-t-2 border-blue-200">
           <Link href="/" className="text-darkblue text-sm font-medium underline">
             See general FAQs →
           </Link>

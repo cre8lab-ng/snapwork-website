@@ -15,8 +15,8 @@ export function Navbar() {
       setIsScrolled(scrollTop > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMobileMenu = () => {
@@ -24,20 +24,28 @@ export function Navbar() {
   };
 
   return (
-    <div className={`w-full transition-all duration-300 ${
-      isScrolled 
-        ? 'fixed top-0 left-0 right-0 z-50 px-0 py-2 shadow-lg bg-blue-100' 
-        : 'px-4 sm:px-6 md:px-10 pt-4 sm:pt-6'
-    }`}>
-      <header className={`w-full flex items-center justify-between relative transition-all duration-300 ${
-        isScrolled 
-          ? 'px-4 sm:px-6 md:px-10 py-3 sm:py-4' 
-          : 'px-4 sm:px-6 py-3 sm:py-4 bg-blue-100 rounded-2xl'
-      }`}>
+    <div
+      className={`w-full transition-all duration-300 ${
+        isScrolled
+          ? "fixed top-0 left-0 right-0 z-50 px-0 py-2 shadow-lg bg-white/10 backdrop-blur-sm"
+          : "px-4 sm:px-6 md:px-10 pt-4 sm:pt-6"
+      }`}
+    >
+      <header
+        className={`w-full flex items-center justify-between relative transition-all duration-300 ${
+          isScrolled
+            ? "px-4 sm:px-6 md:px-10 py-3 sm:py-4"
+            : "px-4 sm:px-6 py-3 sm:py-4 bg-darkblue rounded-2xl"
+        }`}
+      >
         {/* Logo */}
         <div className="flex items-center">
           <Image
-            src="/images/snapwork-logo.svg"
+            src={
+              isScrolled
+                ? "/images/snapwork-logo.svg"
+                : "/images/snapwork-logo-white.svg"
+            }
             alt="Snapwork Logo"
             width={80}
             height={60}
@@ -49,32 +57,43 @@ export function Navbar() {
         <nav className="hidden md:flex items-center space-x-8">
           <Link
             href="#services"
-            className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200"
+            className={`${
+              isScrolled ? "text-darkblue" : "text-white"
+            } hover:text-orange-100 font-bold transition-colors duration-200`}
           >
-            Why Us?
+            About Us
           </Link>
           <Link
             href="#about"
-            className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200"
+            className={`${
+              isScrolled ? "text-darkblue" : "text-white"
+            } hover:text-orange-100 font-bold transition-colors duration-200`}
           >
-            Services
+            Why Us?{" "}
           </Link>
           <Link
             href="#pricing"
-            className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200"
+            className={`${
+              isScrolled ? "text-darkblue" : "text-white"
+            } hover:text-orange-100 font-bold transition-colors duration-200`}
           >
             Pricing
           </Link>
           <Link
             href="#contact"
-            className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200"
+            className={`${
+              isScrolled ? "text-darkblue" : "text-white"
+            } hover:text-orange-100 font-bold transition-colors duration-200`}
           >
             Contact Us
           </Link>
         </nav>
 
         {/* Desktop Book Now button */}
-        <Button className="hidden md:block text-sm md:text-base px-4 md:px-6">
+        <Button
+          variant={isScrolled ? "default" : "secondary"}
+          className="hidden md:block text-sm md:text-base px-4 md:px-6"
+        >
           Book Now
         </Button>
 
@@ -85,17 +104,23 @@ export function Navbar() {
           aria-label="Toggle mobile menu"
         >
           <span
-            className={`w-6 h-0.5 bg-darkblue transition-all duration-300 ${
+            className={`w-6 h-0.5 ${
+              isScrolled ? "bg-darkblue" : "bg-white"
+            } transition-all duration-300 ${
               isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
             }`}
           ></span>
           <span
-            className={`w-6 h-0.5 bg-darkblue transition-all duration-300 ${
+            className={`w-6 h-0.5 ${
+              isScrolled ? "bg-darkblue" : "bg-white"
+            } transition-all duration-300 ${
               isMobileMenuOpen ? "opacity-0" : ""
             }`}
           ></span>
           <span
-            className={`w-6 h-0.5 bg-darkblue transition-all duration-300 ${
+            className={`w-6 h-0.5 ${
+              isScrolled ? "bg-darkblue" : "bg-white"
+            } transition-all duration-300 ${
               isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           ></span>
@@ -134,7 +159,7 @@ export function Navbar() {
                 Contact Us
               </Link>
               <div className="pt-4 border-t border-darkblue/20">
-                <Button 
+                <Button
                   className="w-full text-sm block"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
