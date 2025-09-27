@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 const professionals = [
@@ -36,9 +37,11 @@ export default function JoinUs() {
         <div className="text-h1 mb-6 md:mb-0 !text-white">
           Are You a Service Professional?
         </div>
-        <Button className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#1E2A63] px-6 py-3 rounded-lg font-medium transition-colors" variant="primary">
-          Join Us!
-        </Button>
+        <Link href="/join-us">
+          <Button className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#1E2A63] px-6 py-3 rounded-lg font-medium transition-colors" variant="primary">
+            Join Us!
+          </Button>
+        </Link>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">

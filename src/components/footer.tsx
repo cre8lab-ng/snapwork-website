@@ -57,10 +57,10 @@ export default function Footer() {
                 isOpen("company") ? "block" : "hidden lg:block"
               } text-blue-100`}
             >
-              <li className="hover:text-white cursor-pointer transition-colors !text-body">About Us</li>
-              <li className="hover:text-white cursor-pointer transition-colors !text-body">Join as a service provider</li>
-              <li className="hover:text-white cursor-pointer transition-colors !text-body">Terms of use</li>
-              <li className="hover:text-white cursor-pointer transition-colors !text-body">Privacy Policy</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">About Us</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">Join as a service provider</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">Terms of use</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">Privacy Policy</li>
             </ul>
           </div>
 
@@ -86,10 +86,10 @@ export default function Footer() {
                 isOpen("quick") ? "block" : "hidden lg:block"
               } text-blue-100`}
             >
-              <li className="hover:text-white cursor-pointer transition-colors !text-body">Book Now</li>
-              <li className="hover:text-white cursor-pointer transition-colors !text-body">FAQ</li>
-              <li className="hover:text-white cursor-pointer transition-colors !text-body">Get a quote</li>
-              <li className="hover:text-white cursor-pointer transition-colors !text-body">Services</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">Book Now</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">FAQ</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">Get a quote</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">Services</li>
             </ul>
           </div>
 
@@ -117,15 +117,15 @@ export default function Footer() {
             >
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="mail" />
-                <span className="!text-body">snap@work.ng</span>
+                <span className="font-medium">snap@work.ng</span>
               </li>
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="whatsapp" />
-                <span className="!text-body">+23404059336711</span>
+                <span className="font-medium">+23404059336711</span>
               </li>
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="phone" />
-                <span className="!text-body">+23404059336711</span>
+                <span className="font-medium">+23404059336711</span>
               </li>
             </ul>
           </div>

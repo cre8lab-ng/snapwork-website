@@ -66,15 +66,7 @@ export function Navbar() {
             About Us
           </Link>
           <Link
-            href="#why-us"
-            className={`${
-              isScrolled ? "text-darkblue" : "text-white"
-            } hover:text-orange-100 font-bold transition-colors duration-200`}
-          >
-            Why Us?{" "}
-          </Link>
-          <Link
-            href="#services"
+            href="/#services"
             className={`${
               isScrolled ? "text-darkblue" : "text-white"
             } hover:text-orange-100 font-bold transition-colors duration-200`}
@@ -88,6 +80,14 @@ export function Navbar() {
             } hover:text-orange-100 font-bold transition-colors duration-200`}
           >
             Contact Us
+          </Link>
+          <Link
+            href="/join-us"
+            className={`${
+              isScrolled ? "text-darkblue" : "text-white"
+            } hover:text-orange-100 font-bold transition-colors duration-200`}
+          >
+            Join Us
           </Link>
         </nav>
 
@@ -146,14 +146,14 @@ export function Navbar() {
                 About Us
               </Link>
               <Link
-                href="#why-us"
+                href="/#why-us"
                 className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200 text-center py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Why Us?
               </Link>
               <Link
-                href="#services"
+                href="/#services"
                 className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200 text-center py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -165,6 +165,13 @@ export function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact Us
+              </Link>
+              <Link
+                href="/join-us"
+                className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200 text-center py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Join Us
               </Link>
               <div className="pt-4 border-t border-darkblue/20">
                 <a

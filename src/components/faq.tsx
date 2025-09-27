@@ -61,7 +61,7 @@ const FaqView = () => {
               ))}
             </div>
             <div className="pt-4 md:pt-6">
-              <Link href="/" className="text-darkblue underline">
+              <Link href="/faq" className="text-darkblue underline">
                 See general FAQs →
               </Link>
             </div>
@@ -124,7 +124,7 @@ const FaqView = () => {
         </div>
 
         <div className="mt-6 pt-4 border-t-2 border-blue-200">
-          <Link href="/" className="text-darkblue text-sm font-medium underline">
+          <Link href="/faq" className="text-darkblue text-sm font-medium underline">
             See general FAQs →
           </Link>
         </div>
