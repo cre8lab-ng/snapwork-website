@@ -1,17 +1,27 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 const rotatingWords = [
-  { text: "Cleaners" },
-  { text: "Plumbers" },
-  { text: "Electricians" },
-  { text: "Painters" },
-  { text: "Tailors" },
+  "Electricians",
+  "Bricklayers",
+  "Tailors",
+  "Painters",
+  "Cleaners",
+];
+
+const serviceImages = [
+  { src: "/images/electrician.svg", alt: "Electrician Service" },
+  { src: "/images/bricklayer.svg", alt: "Bricklayer Service" },
+  { src: "/images/tailor.svg", alt: "Tailoring Service" },
+  { src: "/images/painter.svg", alt: "Painting Service" },
+  { src: "/images/cleaner.svg", alt: "Cleaning Service" },
 ];
 
 export default function GetAQuote() {
   const [index, setIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,10 +34,19 @@ export default function GetAQuote() {
     return () => clearInterval(interval);
   }, []);
 
-  const { text } = rotatingWords[index];
+  useEffect(() => {
+    const imageInterval = setInterval(() => {
+      setImageIndex((prevIndex) => (prevIndex + 1) % serviceImages.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(imageInterval);
+  }, []);
+
+  const text = rotatingWords[index];
+  const currentImage = serviceImages[imageIndex];
 
   return (
-    <section className="w-full min-h-screen overflow-hidden relative">
+    <section className="w-full overflow-hidden relative">
       <div className="grid md:grid-cols-2 items-center max-w-full relative z-10">
         <div className="space-y-10 section-spacing px-4 md:px-20">
           {/* Enhanced intro text with animated underline */}
@@ -40,12 +59,12 @@ export default function GetAQuote() {
           {/* Enhanced main heading with smooth transitions and color changes */}
           <div className="relative">
             <h1
-            className={`text-hero transition-all duration-500 leading-tight tracking-tight drop-shadow-lg ${
-              isVisible
-                ? "opacity-100 transform translate-y-0"
-                : "opacity-0 transform translate-y-4"
-            }`}
-          >
+              className={`text-hero transition-all duration-500 leading-tight tracking-tight drop-shadow-lg ${
+                isVisible
+                  ? "opacity-100 transform translate-y-0"
+                  : "opacity-0 transform translate-y-4"
+              }`}
+            >
               {text}
             </h1>
           </div>
@@ -54,21 +73,26 @@ export default function GetAQuote() {
           <p className="text-body leading-relaxed max-w-lg">
             Connect with skilled professionals who deliver quality work on time,
             every time.
-            <span className="font-semibold text-darkblue/80">
-              Get your free quote today!
-            </span>
           </p>
-
-          <Button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <span className="relative z-10">Request a Quote</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </Button>
+          <Button>Request a quote</Button>
         </div>
 
+        {/* Right side - Quote background image */}
+        <div className="hidden md:flex items-center justify-center p-8">
+          {/* Right side - Rotating Service Worker Images */}
+          <div className="relative">
+            <div className="relative z-10 transition-all duration-500 ease-in-out">
+              <Image
+                src={currentImage.src}
+                alt={currentImage.alt}
+                width={400}
+                height={500}
+                className="w-full max-w-[350px] md:max-w-[400px] h-auto drop-shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* Bottom wave decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white/20 to-transparent"></div>
     </section>
   );
 }
