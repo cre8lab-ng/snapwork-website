@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Icon from "./icon";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 export default function Footer() {
@@ -57,10 +58,18 @@ export default function Footer() {
                 isOpen("company") ? "block" : "hidden lg:block"
               } text-blue-100`}
             >
-              <li className="hover:text-white cursor-pointer transition-colors font-medium">About Us</li>
-              <li className="hover:text-white cursor-pointer transition-colors font-medium">Join as a service provider</li>
-              <li className="hover:text-white cursor-pointer transition-colors font-medium">Terms of use</li>
-              <li className="hover:text-white cursor-pointer transition-colors font-medium">Privacy Policy</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">
+                <Link href="/about">About Us</Link>
+              </li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">
+                <Link href="/join-us">Join as a service provider</Link>
+              </li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">
+                <Link href="/terms-of-use">Terms of use</Link>
+              </li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </li>
             </ul>
           </div>
 
@@ -86,10 +95,18 @@ export default function Footer() {
                 isOpen("quick") ? "block" : "hidden lg:block"
               } text-blue-100`}
             >
-              <li className="hover:text-white cursor-pointer transition-colors font-medium">Book Now</li>
-              <li className="hover:text-white cursor-pointer transition-colors font-medium">FAQ</li>
-              <li className="hover:text-white cursor-pointer transition-colors font-medium">Get a quote</li>
-              <li className="hover:text-white cursor-pointer transition-colors font-medium">Services</li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">
+                <Link href="/book-now">Book Now</Link>
+              </li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">
+                <Link href="/faq">FAQ</Link>
+              </li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">
+                <Link href="/get-a-quote">Get a quote</Link>
+              </li>
+              <li className="hover:text-white cursor-pointer transition-colors font-medium">
+                <Link href="/services">Services</Link>
+              </li>
             </ul>
           </div>
 
@@ -117,15 +134,15 @@ export default function Footer() {
             >
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="mail" />
-                <span className="font-medium">snap@work.ng</span>
+                <Link href="mailto:snap@work.ng" className="font-medium">snap@work.ng</Link>
               </li>
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="whatsapp" />
-                <span className="font-medium">+23404059336711</span>
+                <Link href="https://wa.me/23404059336711" className="font-medium">+23404059336711</Link>
               </li>
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="phone" />
-                <span className="font-medium">+23404059336711</span>
+                <Link href="tel:+23404059336711" className="font-medium">+23404059336711</Link>
               </li>
             </ul>
           </div>
