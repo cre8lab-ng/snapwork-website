@@ -16,9 +16,9 @@ export default function Footer() {
     <footer className="bg-darkblue text-white section-spacing px-16">
       <div className="mx-auto">
         {/* Main content grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-6">
           {/* Newsletter signup section */}
-          <div className="lg:col-span-1 lg:pr-8">
+          <div className="lg:col-span-2 lg:pr-8">
             <h2 className="text-subtitle component-spacing leading-relaxed !text-white">
               Stay updated with Snapwork by
               signing up for our newsletter

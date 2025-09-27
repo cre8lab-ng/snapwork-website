@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "Satoshi Black";
   src: url("/fonts/Satoshi-Black.otf") format("opentype");

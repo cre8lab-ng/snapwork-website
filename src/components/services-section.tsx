@@ -52,7 +52,7 @@ export default function ServicesPage() {
       : services.filter((service) => service.category === activeCategory);
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section id="services" className="relative min-h-screen overflow-hidden">
       <div className="relative z-10 section-spacing px-4">
         <SectionHeader
           title="Our Services"

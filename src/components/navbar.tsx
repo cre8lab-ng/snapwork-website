@@ -40,23 +40,25 @@ export function Navbar() {
       >
         {/* Logo */}
         <div className="flex items-center">
-          <Image
-            src={
-              isScrolled
-                ? "/images/snapwork-logo.svg"
-                : "/images/snapwork-logo-white.svg"
-            }
-            alt="Snapwork Logo"
-            width={80}
-            height={60}
-            className="w-auto h-10 sm:h-12 md:h-14"
-          />
+          <Link href="/">
+            <Image
+              src={
+                isScrolled
+                  ? "/images/snapwork-logo.svg"
+                  : "/images/snapwork-logo-white.svg"
+              }
+              alt="Snapwork Logo"
+              width={80}
+              height={60}
+              className="w-auto h-10 sm:h-12 md:h-14 cursor-pointer"
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link
-            href="#services"
+            href="/about"
             className={`${
               isScrolled ? "text-darkblue" : "text-white"
             } hover:text-orange-100 font-bold transition-colors duration-200`}
@@ -64,7 +66,7 @@ export function Navbar() {
             About Us
           </Link>
           <Link
-            href="#about"
+            href="#why-us"
             className={`${
               isScrolled ? "text-darkblue" : "text-white"
             } hover:text-orange-100 font-bold transition-colors duration-200`}
@@ -72,15 +74,15 @@ export function Navbar() {
             Why Us?{" "}
           </Link>
           <Link
-            href="#pricing"
+            href="#services"
             className={`${
               isScrolled ? "text-darkblue" : "text-white"
             } hover:text-orange-100 font-bold transition-colors duration-200`}
           >
-            Pricing
+            Services
           </Link>
           <Link
-            href="#contact"
+            href="/contact"
             className={`${
               isScrolled ? "text-darkblue" : "text-white"
             } hover:text-orange-100 font-bold transition-colors duration-200`}
@@ -90,12 +92,18 @@ export function Navbar() {
         </nav>
 
         {/* Desktop Book Now button */}
-        <Button
-          variant={isScrolled ? "default" : "secondary"}
-          className="hidden md:block text-sm md:text-base px-4 md:px-6"
+        <a
+          href="https://book-snapwork.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Book Now
-        </Button>
+          <Button
+            variant={isScrolled ? "default" : "secondary"}
+            className="hidden md:block text-sm md:text-base px-4 md:px-6"
+          >
+            Book Now
+          </Button>
+        </a>
 
         {/* Mobile hamburger menu button */}
         <Button
@@ -131,40 +139,47 @@ export function Navbar() {
           <div className="absolute top-full left-0 right-0 mt-2 bg-blue-100 rounded-2xl shadow-lg md:hidden z-50">
             <nav className="flex flex-col space-y-4 p-6">
               <Link
-                href="#services"
+                href="/about"
                 className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200 text-center py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About Us
               </Link>
               <Link
-                href="#about"
+                href="#why-us"
                 className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200 text-center py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Why Us?
               </Link>
               <Link
-                href="#pricing"
+                href="#services"
                 className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200 text-center py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Pricing
+                Services
               </Link>
               <Link
-                href="#contact"
+                href="/contact"
                 className="text-darkblue hover:text-orange-100 font-bold transition-colors duration-200 text-center py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact Us
               </Link>
               <div className="pt-4 border-t border-darkblue/20">
-                <Button
-                  className="w-full text-sm block"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <a
+                  href="https://book-snapwork.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
                 >
-                  Book Now
-                </Button>
+                  <Button
+                    className="w-full text-sm block"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Book Now
+                  </Button>
+                </a>
               </div>
             </nav>
           </div>
