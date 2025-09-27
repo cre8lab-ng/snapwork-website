@@ -1,221 +1,254 @@
-import WebPageTitle from "@/components/webpagetitle";
+import { Button } from "@/components/ui/button";
+import { Form, Input, Select, Textarea } from "@/components/ui/form";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
-import { useState } from "react";
+import WebPageTitle from "@/components/webpagetitle";
+import * as Yup from "yup";
+import { FormikHelpers } from "formik";
+
+interface QuoteFormData {
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  serviceType: string;
+  location: string;
+  urgency: string;
+  budget: string;
+  description: string;
+}
+
+const validationSchema = Yup.object({
+  fullName: Yup.string()
+    .min(2, "Name must be at least 2 characters")
+    .required("Full name is required"),
+  email: Yup.string()
+    .email("Please enter a valid email address")
+    .required("Email address is required"),
+  phoneNumber: Yup.string()
+    .matches(/^[\+]?[0-9\s\-\(\)]{10,}$/, "Please enter a valid phone number")
+    .required("Phone number is required"),
+  serviceType: Yup.string()
+    .required("Please select a service type"),
+  location: Yup.string()
+    .min(5, "Please provide a more specific location")
+    .required("Location is required"),
+  urgency: Yup.string()
+    .required("Please select urgency level"),
+  budget: Yup.string()
+    .required("Please select your budget range"),
+  description: Yup.string()
+    .min(10, "Please provide more details about your requirements")
+    .required("Project description is required"),
+});
 
 export default function GetAQuote() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    location: "",
-    projectSize: "",
-    budget: "",
-    timeline: "",
-    description: ""
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleSubmit = async (values: QuoteFormData, { setSubmitting, resetForm }: FormikHelpers<QuoteFormData>) => {
+    try {
+      // Simulate API call
+      console.log("Quote form submitted:", values);
+      
+      // Here you would typically send the data to your API
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      alert("Thank you for your request! We'll get back to you with a quote soon.");
+      resetForm();
+    } catch (error) {
+      console.error("Error submitting quote form:", error);
+      alert("There was an error submitting your request. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Quote request submitted:", formData);
+  const serviceTypes = [
+    { value: "", label: "Select a service" },
+    { value: "Electrician", label: "Electrician" },
+    { value: "Plumber", label: "Plumber" },
+    { value: "Mechanic", label: "Mechanic" },
+    { value: "Hairdresser", label: "Hairdresser" },
+    { value: "Cleaner", label: "Cleaner" },
+    { value: "Painter", label: "Painter" },
+    { value: "Carpenter", label: "Carpenter" },
+    { value: "Tailor", label: "Tailor" },
+    { value: "Gardener", label: "Gardener" },
+    { value: "Chef/Cook", label: "Chef/Cook" },
+    { value: "Tutor", label: "Tutor" },
+    { value: "Photographer", label: "Photographer" },
+    { value: "Other", label: "Other" },
+  ];
+
+  const urgencyOptions = [
+    { value: "", label: "Select urgency" },
+    { value: "ASAP", label: "ASAP (Within 24 hours)" },
+    { value: "This Week", label: "This Week" },
+    { value: "Next Week", label: "Next Week" },
+    { value: "This Month", label: "This Month" },
+    { value: "Flexible", label: "Flexible Timeline" },
+  ];
+
+  const budgetOptions = [
+    { value: "", label: "Select budget range" },
+    { value: "Under ₦10,000", label: "Under ₦10,000" },
+    { value: "₦10,000 - ₦25,000", label: "₦10,000 - ₦25,000" },
+    { value: "₦25,000 - ₦50,000", label: "₦25,000 - ₦50,000" },
+    { value: "₦50,000 - ₦100,000", label: "₦50,000 - ₦100,000" },
+    { value: "Over ₦100,000", label: "Over ₦100,000" },
+    { value: "Discuss with professional", label: "Discuss with professional" },
+  ];
+
+  const initialValues: QuoteFormData = {
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    serviceType: "",
+    location: "",
+    urgency: "",
+    budget: "",
+    description: "",
   };
 
   return (
     <>
-      <WebPageTitle title="Get a Quote - Snapwork" />
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <main className="pt-20 pb-16">
-          <div className="container mx-auto px-4 py-16">
-            <div className="max-w-2xl mx-auto">
-              <h1 className="text-4xl font-bold text-center mb-8 text-darkblue">
-                Get a Quote
+      <WebPageTitle title="Get a Quote | Snapwork" />
+      <Navbar />
+      
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-12">
+              <h1 className="text-4xl md:text-5xl font-bold text-darkblue mb-6">
+                Get Your Free Quote
               </h1>
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Tell us about your project and we&apos;ll connect you with the right professionals. 
+                Get competitive quotes from verified service providers in your area.
+              </p>
+            </div>
 
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
+            {/* Form */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+              <Form
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                {/* Personal Information */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <Input
+                    name="fullName"
+                    label="Full Name"
+                    placeholder="Enter your full name"
+                    required
+                  />
 
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
+                  <Input
+                    name="email"
+                    type="email"
+                    label="Email Address"
+                    placeholder="Enter your email address"
+                    required
+                  />
+                </div>
 
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                      Service Type *
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="cleaning">Cleaning Services</option>
-                      <option value="plumbing">Plumbing</option>
-                      <option value="electrical">Electrical Work</option>
-                      <option value="painting">Painting</option>
-                      <option value="carpentry">Carpentry</option>
-                      <option value="gardening">Gardening</option>
-                      <option value="construction">Construction</option>
-                      <option value="renovation">Home Renovation</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
+                <Input
+                  name="phoneNumber"
+                  type="tel"
+                  label="Phone Number"
+                  placeholder="Enter your phone number"
+                  required
+                />
 
-                  <div>
-                    <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-2">
-                      Project Location *
-                    </label>
-                    <input
-                      type="text"
-                      id="location"
-                      name="location"
-                      value={formData.location}
-                      onChange={handleChange}
-                      required
-                      placeholder="Enter project address"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
+                {/* Service Details */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <Select
+                    name="serviceType"
+                    label="Service Type"
+                    options={serviceTypes}
+                    required
+                  />
 
-                  <div>
-                    <label htmlFor="projectSize" className="block text-sm font-medium text-gray-700 mb-2">
-                      Project Size
-                    </label>
-                    <select
-                      id="projectSize"
-                      name="projectSize"
-                      value={formData.projectSize}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">Select project size</option>
-                      <option value="small">Small (1-2 hours)</option>
-                      <option value="medium">Medium (Half day)</option>
-                      <option value="large">Large (Full day)</option>
-                      <option value="multi-day">Multi-day project</option>
-                    </select>
-                  </div>
+                  <Input
+                    name="location"
+                    label="Location"
+                    placeholder="Enter your location/address"
+                    required
+                  />
+                </div>
 
-                  <div>
-                    <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
-                      Budget Range
-                    </label>
-                    <select
-                      id="budget"
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">Select budget range</option>
-                      <option value="under-50k">Under ₦50,000</option>
-                      <option value="50k-100k">₦50,000 - ₦100,000</option>
-                      <option value="100k-250k">₦100,000 - ₦250,000</option>
-                      <option value="250k-500k">₦250,000 - ₦500,000</option>
-                      <option value="over-500k">Over ₦500,000</option>
-                    </select>
-                  </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <Select
+                    name="urgency"
+                    label="When do you need this service?"
+                    options={urgencyOptions}
+                    required
+                  />
 
-                  <div>
-                    <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
-                      Preferred Timeline
-                    </label>
-                    <select
-                      id="timeline"
-                      name="timeline"
-                      value={formData.timeline}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">Select timeline</option>
-                      <option value="asap">ASAP</option>
-                      <option value="this-week">This week</option>
-                      <option value="next-week">Next week</option>
-                      <option value="this-month">This month</option>
-                      <option value="flexible">Flexible</option>
-                    </select>
-                  </div>
+                  <Select
+                    name="budget"
+                    label="Budget Range"
+                    options={budgetOptions}
+                    required
+                  />
+                </div>
 
-                  <div>
-                    <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
-                      Project Description *
-                    </label>
-                    <textarea
-                      id="description"
-                      name="description"
-                      value={formData.description}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      placeholder="Please provide detailed information about your project..."
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
+                <Textarea
+                  name="description"
+                  label="Project Description"
+                  placeholder="Please describe your project in detail. Include any specific requirements, materials needed, or other important information..."
+                  rows={5}
+                  required
+                />
 
-                  <button
+                <div className="text-center pt-6">
+                  <Button
                     type="submit"
-                    className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition duration-200 font-medium"
+                    className="w-full bg-darkblue hover:bg-blue-700 text-white px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   >
-                    Request Quote
-                  </button>
-                </form>
+                    Get My Free Quote
+                  </Button>
+                </div>
+              </Form>
+            </div>
+
+            {/* Additional Information */}
+            <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-darkblue mb-2">Quick Response</h3>
+                <p className="text-gray-600 text-sm">Get quotes within 24 hours from verified professionals</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-darkblue mb-2">Verified Professionals</h3>
+                <p className="text-gray-600 text-sm">All service providers are background-checked and verified</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-darkblue mb-2">Competitive Pricing</h3>
+                <p className="text-gray-600 text-sm">Compare quotes and choose the best value for your project</p>
               </div>
             </div>
           </div>
-        </main>
-        <Footer />
+        </div>
       </div>
+
+      <Footer />
     </>
   );
 }

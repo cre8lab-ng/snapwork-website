@@ -66,7 +66,7 @@ export function Navbar() {
             About Us
           </Link>
           <Link
-            href="/#services"
+            href="/services"
             className={`${
               isScrolled ? "text-darkblue" : "text-white"
             } hover:text-orange-100 font-bold transition-colors duration-200`}

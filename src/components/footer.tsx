@@ -3,6 +3,9 @@ import Icon from "./icon";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { Form, Input } from "./ui/form";
+import * as Yup from "yup";
+import { FormikHelpers } from "formik";
 
 export default function Footer() {
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -12,6 +15,36 @@ export default function Footer() {
   };
 
   const isOpen = (section: string) => openSection === section;
+
+  // Newsletter form validation schema
+  const newsletterValidationSchema = Yup.object({
+    email: Yup.string()
+      .email("Please enter a valid email address")
+      .required("Email address is required"),
+  });
+
+  // Newsletter form initial values
+  const newsletterInitialValues = {
+    email: "",
+  };
+
+  // Newsletter form submission handler
+  const handleNewsletterSubmit = async (
+    values: { email: string },
+    { setSubmitting, resetForm }: FormikHelpers<{ email: string }>
+  ) => {
+    try {
+      console.log("Newsletter subscription:", values);
+      // Here you would typically send the email to your newsletter service
+      alert("Thank you for subscribing to our newsletter!");
+      resetForm();
+    } catch (error) {
+      console.error("Newsletter subscription error:", error);
+      alert("There was an error subscribing to the newsletter. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <footer className="bg-darkblue text-white section-spacing px-16">
@@ -23,16 +56,22 @@ export default function Footer() {
             <h2 className="text-subtitle component-spacing leading-relaxed !text-white">
               Stay updated with Snapwork by signing up for our newsletter
             </h2>
-            <div className="space-y-6">
-              <input
+            <Form
+              initialValues={newsletterInitialValues}
+              validationSchema={newsletterValidationSchema}
+              onSubmit={handleNewsletterSubmit}
+              className="space-y-6"
+            >
+              <Input
+                name="email"
                 type="email"
                 placeholder="Email Address"
-                className=" w-full rounded-lg px-6 py-4 text-blue-300 border border-gray-300 placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                className="w-full rounded-lg px-6 py-4 text-blue-300 border border-gray-300 placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
               />
-              <Button variant="secondary" className="w-auto px-10 py-3">
+              <Button type="submit" variant="secondary" className="w-auto px-10 py-3">
                 Subscribe
               </Button>
-            </div>
+            </Form>
           </div>
 
           {/* Company section */}

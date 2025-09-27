@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const rotatingWords = [
   "Electricians",
@@ -74,7 +75,9 @@ export default function GetAQuote() {
             Connect with skilled professionals who deliver quality work on time,
             every time.
           </p>
-          <Button>Request a quote</Button>
+          <Link href="/get-a-quote">
+            <Button>Request a quote</Button>
+          </Link>
         </div>
 
         {/* Right side - Quote background image */}
