@@ -50,7 +50,11 @@ export function Navbar() {
               alt="Snapwork Logo"
               width={80}
               height={60}
-              className="w-auto h-10 sm:h-12 md:h-14 cursor-pointer"
+              className={`w-auto cursor-pointer ${
+                isScrolled 
+                  ? "h-10 sm:h-12 md:h-14" 
+                  : "h-6 sm:h-8 md:h-10"
+              }`}
             />
           </Link>
         </div>

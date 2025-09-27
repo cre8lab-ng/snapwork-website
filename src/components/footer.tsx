@@ -89,7 +89,7 @@ export default function Footer() {
                   alt="Dropdown"
                   width={20}
                   height={20}
-                  className={`transform transition-transform ${
+                  className={`transform transition-transform filter invert ${
                     isOpen("company") ? "rotate-180" : ""
                   }`}
                 />
@@ -130,7 +130,7 @@ export default function Footer() {
                   alt="Dropdown"
                   width={20}
                   height={20}
-                  className={`transform transition-transform ${
+                  className={`transform transition-transform filter invert ${
                     isOpen("quick") ? "rotate-180" : ""
                   }`}
                 />
@@ -178,7 +178,7 @@ export default function Footer() {
                   alt="Dropdown"
                   width={20}
                   height={20}
-                  className={`transform transition-transform ${
+                  className={`transform transition-transform filter invert ${
                     isOpen("contact") ? "rotate-180" : ""
                   }`}
                 />

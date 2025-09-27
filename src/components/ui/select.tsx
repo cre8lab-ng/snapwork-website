@@ -52,37 +52,56 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           </label>
         )}
         
-        <select
-          {...field}
-          {...props}
-          ref={ref}
-          id={name}
-          className={cn(
-            "w-full px-4 py-3 border rounded-lg transition-colors duration-200",
-            "focus:outline-none focus:ring-2 focus:border-transparent",
-            "bg-white appearance-none cursor-pointer",
-            hasError 
-              ? "border-red-300 focus:ring-red-500" 
-              : "border-gray-300 focus:ring-blue-500",
-            "disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed",
-            className
-          )}
-        >
-          {placeholder && (
-            <option value="" disabled>
-              {placeholder}
-            </option>
-          )}
-          {options.map((option) => (
-            <option 
-              key={option.value} 
-              value={option.value}
-              disabled={option.disabled}
+        <div className="relative">
+          <select
+            {...field}
+            {...props}
+            ref={ref}
+            id={name}
+            className={cn(
+              "w-full px-4 py-3 pr-10 border rounded-lg transition-colors duration-200",
+              "focus:outline-none focus:ring-2 focus:border-transparent",
+              "bg-white appearance-none cursor-pointer",
+              hasError 
+                ? "border-red-300 focus:ring-red-500" 
+                : "border-gray-300 focus:ring-blue-500",
+              "disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed",
+              className
+            )}
+          >
+            {placeholder && (
+              <option value="" disabled>
+                {placeholder}
+              </option>
+            )}
+            {options.map((option) => (
+              <option 
+                key={option.value} 
+                value={option.value}
+                disabled={option.disabled}
+              >
+                {option.label}
+              </option>
+            ))}
+          </select>
+          
+          {/* Dropdown Icon */}
+          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+            <svg 
+              className="w-5 h-5 text-gray-400" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
             >
-              {option.label}
-            </option>
-          ))}
-        </select>
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M19 9l-7 7-7-7" 
+              />
+            </svg>
+          </div>
+        </div>
         
         {hasError && (
           <p className={cn("text-sm text-red-600", errorClassName)}>

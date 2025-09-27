@@ -14,11 +14,11 @@ export default function HeroSection() {
             className="w-full rounded-lg h-96 sm:h-screen md:h-screen lg:h-auto object-cover"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-20 lg:pt-26 text-center px-2 sm:px-4 text-white">
-            <h1 className="text-hero drop-shadow-lg mb-4 sm:mb-6 md:mb-8 text-white">
+            <h1 className="text-hero  mb-4 sm:mb-6 md:mb-8 text-white">
               One Platform, <br />
               All your services
             </h1>
-            <p className="text-subtitle drop-shadow-lg max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl text-white">
+            <p className="text-subtitle max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl text-white">
               Easily get matched with trusted <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>professionals whether you need
             </p>
