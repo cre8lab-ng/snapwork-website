@@ -21,8 +21,7 @@ export default function Footer() {
           {/* Newsletter signup section */}
           <div className="lg:col-span-2 lg:pr-8">
             <h2 className="text-subtitle component-spacing leading-relaxed !text-white">
-              Stay updated with Snapwork by
-              signing up for our newsletter
+              Stay updated with Snapwork by signing up for our newsletter
             </h2>
             <div className="space-y-6">
               <input
@@ -42,14 +41,18 @@ export default function Footer() {
               className="flex justify-between items-center lg:block cursor-pointer lg:cursor-default"
               onClick={() => toggleSection("company")}
             >
-              <h3 className="text-medium font-semibold element-spacing tracking-wide !text-white">COMPANY</h3>
+              <h3 className="text-medium font-semibold element-spacing tracking-wide !text-white">
+                COMPANY
+              </h3>
               <div className="lg:hidden">
                 <Image
                   src="/images/dropdown.svg"
                   alt="Dropdown"
                   width={20}
                   height={20}
-                  className={`transform transition-transform ${isOpen("company") ? "rotate-180" : ""}`}
+                  className={`transform transition-transform ${
+                    isOpen("company") ? "rotate-180" : ""
+                  }`}
                 />
               </div>
             </div>
@@ -79,14 +82,18 @@ export default function Footer() {
               className="flex justify-between items-center lg:block cursor-pointer lg:cursor-default"
               onClick={() => toggleSection("quick")}
             >
-              <h3 className="text-medium font-semibold element-spacing tracking-wide !text-white">QUICK LINKS</h3>
+              <h3 className="text-medium font-semibold element-spacing tracking-wide !text-white">
+                QUICK LINKS
+              </h3>
               <div className="lg:hidden">
                 <Image
                   src="/images/dropdown.svg"
                   alt="Dropdown"
                   width={20}
                   height={20}
-                  className={`transform transition-transform ${isOpen("quick") ? "rotate-180" : ""}`}
+                  className={`transform transition-transform ${
+                    isOpen("quick") ? "rotate-180" : ""
+                  }`}
                 />
               </div>
             </div>
@@ -96,7 +103,14 @@ export default function Footer() {
               } text-blue-100`}
             >
               <li className="hover:text-white cursor-pointer transition-colors font-medium">
-                <Link href="/book-now">Book Now</Link>
+                <a
+                  href="https://book-snapwork.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Book Now
+                </a>
               </li>
               <li className="hover:text-white cursor-pointer transition-colors font-medium">
                 <Link href="/faq">FAQ</Link>
@@ -116,14 +130,18 @@ export default function Footer() {
               className="flex justify-between items-center lg:block cursor-pointer lg:cursor-default"
               onClick={() => toggleSection("contact")}
             >
-              <h3 className="text-medium font-semibold element-spacing tracking-wide !text-white">CONTACT</h3>
+              <h3 className="text-medium font-semibold element-spacing tracking-wide !text-white">
+                CONTACT
+              </h3>
               <div className="lg:hidden">
                 <Image
                   src="/images/dropdown.svg"
                   alt="Dropdown"
                   width={20}
                   height={20}
-                  className={`transform transition-transform ${isOpen("contact") ? "rotate-180" : ""}`}
+                  className={`transform transition-transform ${
+                    isOpen("contact") ? "rotate-180" : ""
+                  }`}
                 />
               </div>
             </div>
@@ -134,15 +152,24 @@ export default function Footer() {
             >
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="mail" />
-                <Link href="mailto:snap@work.ng" className="font-medium">snap@work.ng</Link>
+                <Link href="mailto:snap@work.ng" className="font-medium">
+                  snap@work.ng
+                </Link>
               </li>
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="whatsapp" />
-                <Link href="https://wa.me/23404059336711" className="font-medium">+23404059336711</Link>
+                <Link
+                  href="https://wa.me/23404059336711"
+                  className="font-medium"
+                >
+                  +23404059336711
+                </Link>
               </li>
               <li className="flex items-center gap-3 hover:text-white transition-colors">
                 <Icon name="phone" />
-                <Link href="tel:+23404059336711" className="font-medium">+23404059336711</Link>
+                <Link href="tel:+23404059336711" className="font-medium">
+                  +23404059336711
+                </Link>
               </li>
             </ul>
           </div>
