@@ -11,12 +11,12 @@ const professionals = [
   },
  {
   name: "Chika Obasi",
-  image: "/images/lola-oluwo.svg",
+  image: "/images/chika-obasi.svg",
   bio: `In the busy streets of Enugu, I learned early that every engine has a story. Over the last 5 years, I’ve built my reputation as a mechanic who doesn’t just fix cars—I restore confidence on the road. From routine servicing to complex repairs, I take pride in turning problems into smooth rides.`,
 },
 {
   name: "Bimbo Ola",
-  image: "/images/lola-oluwo.svg",
+  image: "/images/bimbo-ola.svg",
   bio: `Lagos Island’s energy has always inspired me to create beauty out of everyday life. For 3 years, I’ve worked as a hairdresser who believes every style is a form of self-expression. Whether it’s a fresh cut, a bold color, or a timeless look, I craft hairstyles that empower people to feel their best.`,
 },
 
