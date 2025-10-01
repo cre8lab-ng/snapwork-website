@@ -1,14 +1,10 @@
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/footer";
 import WebPageTitle from "@/components/webpagetitle";
 
 export default function About() {
   return (
     <>
       <WebPageTitle title="About Us - Snapwork" />
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        
+      <div className="min-h-screen bg-gray-50">        
         {/* Main Content */}
         <main className="pt-20 pb-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,8 +84,6 @@ export default function About() {
             </div>
           </div>
         </main>
-
-        <Footer />
       </div>
     </>
   );

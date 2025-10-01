@@ -1,8 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import WebPageTitle from "../components/webpagetitle";
-import { Navbar } from "../components/navbar";
-import Footer from "../components/footer";
 
 const generalFaqData = [
   {
@@ -133,10 +131,8 @@ const GeneralFaqPage = () => {
 
   return (
     <>
-      <WebPageTitle title="Frequently Asked Questions - Snapwork" />
+      <WebPageTitle title="FAQ - Snapwork" />
       <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        
         {/* Main Content */}
         <main className="pt-20 pb-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -289,8 +285,6 @@ const GeneralFaqPage = () => {
             </div>
           </div>
         </main>
-
-        <Footer />
       </div>
     </>
   );

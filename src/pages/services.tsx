@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import WebPageTitle from "@/components/webpagetitle";
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/footer";
 import Icon from "@/components/icon";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/section-header";
@@ -58,8 +56,8 @@ export default function Services() {
     <>
       <WebPageTitle title="Services - Snapwork" />
       <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <main className="pt-10 pb-16">
+        {/* Main Content */}
+        <main className="pt-20 pb-16">
           <section className="relative overflow-hidden">
             <div className="relative z-10 px-4 py-8">
               <SectionHeader
@@ -141,7 +139,6 @@ export default function Services() {
             </div>
           </section>
         </main>
-        <Footer />
       </div>
     </>
   );

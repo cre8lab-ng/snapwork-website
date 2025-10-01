@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/footer";
 import WebPageTitle from "@/components/webpagetitle";
 import Image from "next/image";
 
@@ -71,9 +69,7 @@ export default function JoinUs() {
 
   return (
     <>
-      <WebPageTitle title="Join Us | Snapwork" />
-      <Navbar />
-      
+      <WebPageTitle title="Join Us | Snapwork" />      
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
@@ -372,8 +368,6 @@ export default function JoinUs() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }

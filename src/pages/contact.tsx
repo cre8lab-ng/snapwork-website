@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/footer";
 import WebPageTitle from "@/components/webpagetitle";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/icon";
@@ -9,7 +7,6 @@ export default function Contact() {
     <>
       <WebPageTitle title="Contact Us - Snapwork" />
       <div className="min-h-screen bg-gray-50">
-        <Navbar />
         
         {/* Main Content */}
         <main className="pt-20 pb-16">
@@ -163,8 +160,6 @@ export default function Contact() {
             </div>
           </div>
         </main>
-
-        <Footer />
       </div>
     </>
   );

@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/footer";
 import WebPageTitle from "@/components/webpagetitle";
 import { Button } from "@/components/ui/button";
 import { Form, Input, Textarea } from "@/components/ui/form";
@@ -67,65 +65,66 @@ export default function ContactNew() {
 
   return (
     <>
-      <WebPageTitle title="Contact Us | Snapwork" />
+      <WebPageTitle title="Contact Us - Snapwork" />
       <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        
-        <main className="pt-20">
-          <div className="container mx-auto px-4 py-16">
-            <div className="max-w-6xl mx-auto">
-              {/* Header */}
-              <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-bold text-darkblue mb-6">
-                  Get in Touch
-                </h1>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Have questions about our services? Need help with booking? 
-                  We&apos;re here to help you connect with the right professionals.
-                </p>
-              </div>
+        {/* Main Content */}
+        <main className="pt-20 pb-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto px-4 py-16">
+              <div className="max-w-6xl mx-auto">
+                {/* Header */}
+                <div className="text-center mb-16">
+                  <h1 className="text-4xl md:text-5xl font-bold text-darkblue mb-6">
+                    Get in Touch
+                  </h1>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Have questions about our services? Need help with booking? 
+                    We&apos;re here to help you connect with the right professionals.
+                  </p>
+                </div>
 
-              <div className="grid lg:grid-cols-2 gap-12">
-                {/* Contact Information */}
-                <div className="space-y-8">
-                  <div>
-                    <h2 className="text-2xl font-bold text-darkblue mb-6">Contact Information</h2>
-                    <p className="text-gray-600 mb-8">
-                      Reach out to us through any of these channels. We&apos;re always ready to assist you.
-                    </p>
-                  </div>
-
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <Icon name="phone" className="w-6 h-6 text-darkblue" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-darkblue mb-1">Phone</h3>
-                        <p className="text-gray-600">+234 (0) 123 456 7890</p>
-                        <p className="text-sm text-gray-500">Mon-Fri 8AM-6PM</p>
-                      </div>
+                <div className="grid lg:grid-cols-2 gap-12">
+                  {/* Contact Information */}
+                  <div className="space-y-8">
+                    <div>
+                      <h2 className="text-2xl font-bold text-darkblue mb-6">Contact Information</h2>
+                      <p className="text-gray-600 mb-8">
+                        Reach out to us through any of these channels. We&apos;re always ready to assist you.
+                      </p>
                     </div>
 
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <Icon name="mail" className="w-6 h-6 text-darkblue" />
+                    <div className="space-y-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                          <Icon name="phone" className="w-6 h-6 text-darkblue" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-darkblue mb-1">Phone</h3>
+                          <p className="text-gray-600">+234 (0) 123 456 7890</p>
+                          <p className="text-sm text-gray-500">Mon-Fri 8AM-6PM</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-darkblue mb-1">Email</h3>
-                        <p className="text-gray-600">hello@snapwork.ng</p>
-                        <p className="text-sm text-gray-500">We&apos;ll respond within 24 hours</p>
-                      </div>
-                    </div>
 
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <Icon name="location" className="w-6 h-6 text-darkblue" />
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                          <Icon name="mail" className="w-6 h-6 text-darkblue" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-darkblue mb-1">Email</h3>
+                          <p className="text-gray-600">hello@snapwork.ng</p>
+                          <p className="text-sm text-gray-500">We&apos;ll respond within 24 hours</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-darkblue mb-1">Office</h3>
-                        <p className="text-gray-600">123 Business District<br />Lagos, Nigeria</p>
-                        <p className="text-sm text-gray-500">Visit us during business hours</p>
+
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                          <Icon name="location" className="w-6 h-6 text-darkblue" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-darkblue mb-1">Office</h3>
+                          <p className="text-gray-600">123 Business District<br />Lagos, Nigeria</p>
+                          <p className="text-sm text-gray-500">Visit us during business hours</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -197,8 +196,6 @@ export default function ContactNew() {
             </div>
           </div>
         </main>
-
-        <Footer />
       </div>
     </>
   );

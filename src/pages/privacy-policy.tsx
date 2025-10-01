@@ -1,6 +1,4 @@
 import WebPageTitle from "@/components/webpagetitle";
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/footer";
 import { useState } from "react";
 
 export default function PrivacyPolicy() {
@@ -32,8 +30,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <WebPageTitle title="Privacy Policy - Snapwork" />
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
-        <Navbar />
+      <div className="min-h-screen bg-gray-50">
         <main className="pt-20 pb-16">
           <div className="container mx-auto px-4 py-16">
             <div className="max-w-7xl mx-auto">
@@ -361,7 +358,6 @@ export default function PrivacyPolicy() {
             </div>
           </div>
         </main>
-        <Footer />
       </div>
     </>
   );

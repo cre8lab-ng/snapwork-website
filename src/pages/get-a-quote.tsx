@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Form, Input, Select, Textarea } from "@/components/ui/form";
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/footer";
 import WebPageTitle from "@/components/webpagetitle";
 import * as Yup from "yup";
 import { FormikHelpers } from "formik";
@@ -109,11 +107,10 @@ export default function GetAQuote() {
 
   return (
     <>
-      <WebPageTitle title="Get a Quote | Snapwork" />
-      <Navbar />
-      
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100">
-        <div className="container mx-auto px-4 py-16">
+      <WebPageTitle title="Get a Quote - Snapwork" />
+      <div className="min-h-screen bg-gray-50">
+        {/* Main Content */}
+        <main className="pt-20 pb-16">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-12">
@@ -245,10 +242,8 @@ export default function GetAQuote() {
               </div>
             </div>
           </div>
-        </div>
+        </main>
       </div>
-
-      <Footer />
     </>
   );
 }
